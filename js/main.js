@@ -33,5 +33,5 @@ $('a').click(function(){
 
 function scrollToAnchor(anchorID){
     var aTag = $("a[name='"+ anchorID +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top},350,'swing');
 }

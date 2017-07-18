@@ -44,7 +44,10 @@ ul.mainnav li a{
 ul.mainnav li a:hover {background-color: #c6cde3;}
 
 ul.mainnav li.float-right {
-  
+  -webkit-transition:height 200ms ease-in;
+  -moz-transition:height 200ms ease-in;
+  -o-transition:height 200ms ease-in;
+  transition:height 200ms ease-in;
 }
 
 ul.mainnav li.float-right a{
@@ -59,6 +62,7 @@ ul.mainnav li.float-right a{
   transition: all .4s ease-in;
   background-color: #333;
 }
+
 ul.mainnav li.float-right a:hover {background-color: #555;}
 
 ul.mainnav li.float-right a.dropdown:hover {background-color: #666;}
@@ -76,22 +80,39 @@ ul.mainnav li.icon a{
     transition: all .4s ease-in;
     background-color: #333;
 }
+
 ul.mainnav li.icon a:hover {background-color: #555;}
 
 ul.mainnav li.icon {display: none;}
 
+h1, p{text-align: center;}
 
 .section {
     width: 100%;
     height: calc(100vh - 20vh);
     padding-top:20vh;
-  }
+}
+
+.anchor{
+  display: block;
+  height: 0px; /*same height as header*/
+  visibility: hidden;
+}
+
+
 
 
 
 
 @media screen and (max-width:680px) {
-  ul.mainnav li.float-right {display: none;}
+  ul.mainnav li.float-right {
+    display: none;
+    height:0;
+    -webkit-transition:height 200ms ease-in;
+    -moz-transition:height 200ms ease-in;
+    -o-transition:height 200ms ease-in;
+    transition:height 200ms ease-in;
+  }
 
   ul.mainnav li.icon {
     float: right;
@@ -103,7 +124,7 @@ ul.mainnav li.icon {display: none;}
 
 @media screen and (max-width:680px) {
   ul.mainnav.responsive {
-        position: fixed;
+    position: fixed;
   }
   ul.mainnav.responsive li.icon {
     position: absolute;
@@ -117,12 +138,13 @@ ul.mainnav li.icon {display: none;}
   ul.mainnav.responsive li {
     float: none;
     display: inline;
-
-  
+  }
+  ul.mainnav.responsive li.float-right {
+    height:auto;
   }
   ul.mainnav.responsive li a {
     display: block;
-    text-align: left;
+   
     
   }
 
@@ -139,25 +161,12 @@ ul.mainnav li.icon {display: none;}
 
     height: 0px; /*same height as header*/
   }
-
-
-
-}
-
-
-
-h1, p{
-    text-align: center;
 }
 
 
 
 
-.anchor{
-  display: block;
-  height: 0px; /*same height as header*/
-  visibility: hidden;
-}
+
 
 
 
