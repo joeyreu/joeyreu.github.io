@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Joseph Reusing</title>
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+
+
+</head>
+
+
+<body id="mybody">
+	
+	<div class="main">
+		
+		<!--navigation bar-->
+		<ul class="mainnav" id="mynav" >
+			<li><a class="logo" href="#home" onclick="scrollToAnchor('home')">JR</a></li>
+			<div style="float:right;">
+				<li class="float-right"><a class="dropdown" href="#about" onclick="clickDropdownItem();scrollToAnchor('about');">About Me</a></li>
+				<li class="float-right"><a class="dropdown" href="#projects" onclick="clickDropdownItem();scrollToAnchor('projects');">Projects</a></li>
+			</div>
+			<li class="icon">
+	    		<a href="javascript:void(0);" style="font-size:15px;" onclick="screenAdjust()">☰</a>
+	    	</li>
+			
+		</ul>
+		<!-- /navigation bar -->
+
+		<a class="anchor" name="home"></a>
+		<div class="section" style="background-color: lightblue">
+			<h1>Joseph Reusing</h1>
+			<p>Computer Science - Software - Music - Art</p>
+		</div>
+		
+		<a class="anchor" name="about"></a>
+		<div class="section" style="background-color: lavender">
+			<h1>About Me.</h1>
+		</div>
+
+		<a class="anchor" name="projects"></a>
+		<div class="section">
+			
+				<h1>Projects</h1>
+			
+		</div>
+
+	</div>
+
+</body>
+
+
+
+
+
+
+
+
+</html>

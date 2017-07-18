@@ -1,0 +1,165 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding-top: 0px;
+}
+
+a.logo {
+    max-width: 20px; 
+    width: 20px;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.mainnav {
+  overflow: hidden;
+  background-color: #333;
+  top: 0;
+  position: fixed;
+	width: 100%;
+}
+
+ul.mainnav li {float: left;}
+
+ul.mainnav li a{
+  padding-left: 18px;
+  color: black;
+  height: 20px;
+  display: inline-block;
+  padding: 16px;
+  text-decoration: none;
+  -moz-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+  background-color: #FAE6FA;
+
+  font-family: "Montserrat", sans-serif; 
+}
+ul.mainnav li a:hover {background-color: #c6cde3;}
+
+ul.mainnav li.float-right {
+  
+}
+
+ul.mainnav li.float-right a{
+  color: white;
+  height: 20px;
+  display: inline-block;
+  padding: 16px;
+  text-decoration: none;
+  -moz-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+  background-color: #333;
+}
+ul.mainnav li.float-right a:hover {background-color: #555;}
+
+ul.mainnav li.float-right a.dropdown:hover {background-color: #666;}
+
+ul.mainnav li.icon a{
+    margin-right: 0;
+    color: white;
+    height: 20px;
+    display: inline-block;
+    padding: 16px;
+    text-decoration: none;
+    -moz-transition: all .4s ease-in;
+    -o-transition: all .4s ease-in;
+    -webkit-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+    background-color: #333;
+}
+ul.mainnav li.icon a:hover {background-color: #555;}
+
+ul.mainnav li.icon {display: none;}
+
+
+.section {
+    width: 100%;
+    height: calc(100vh - 20vh);
+    padding-top:20vh;
+  }
+
+
+
+
+@media screen and (max-width:680px) {
+  ul.mainnav li.float-right {display: none;}
+
+  ul.mainnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+
+
+@media screen and (max-width:680px) {
+  ul.mainnav.responsive {
+        position: fixed;
+  }
+  ul.mainnav.responsive li.icon {
+    position: absolute;
+     
+    right: 0;
+    top: 0;
+  }
+  ul.mainnav.responsive div{
+    width:100%;
+  }
+  ul.mainnav.responsive li {
+    float: none;
+    display: inline;
+
+  
+  }
+  ul.mainnav.responsive li a {
+    display: block;
+    text-align: left;
+    
+  }
+
+  ul.mainnav.responsive li a.dropdown {
+    background-color: #555;
+    text-align:center;
+  }
+
+  body.responsive {
+    padding-top: 0px;
+  }
+
+  body.responsive span {
+
+    height: 0px; /*same height as header*/
+  }
+
+
+
+}
+
+
+
+h1, p{
+    text-align: center;
+}
+
+
+
+
+.anchor{
+  display: block;
+  height: 0px; /*same height as header*/
+  visibility: hidden;
+}
+
+
+
+
+
