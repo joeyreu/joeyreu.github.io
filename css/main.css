@@ -44,10 +44,6 @@ ul.mainnav li a{
 ul.mainnav li a:hover {background-color: #c6cde3;}
 
 ul.mainnav li.float-right {
-  -webkit-transition:height 200ms ease-in;
-  -moz-transition:height 200ms ease-in;
-  -o-transition:height 200ms ease-in;
-  transition:height 200ms ease-in;
 }
 
 ul.mainnav li.float-right a{
@@ -107,11 +103,6 @@ h1, p{text-align: center;}
 @media screen and (max-width:680px) {
   ul.mainnav li.float-right {
     display: none;
-    height:0;
-    -webkit-transition:height 200ms ease-in;
-    -moz-transition:height 200ms ease-in;
-    -o-transition:height 200ms ease-in;
-    transition:height 200ms ease-in;
   }
 
   ul.mainnav li.icon {
@@ -138,9 +129,6 @@ h1, p{text-align: center;}
   ul.mainnav.responsive li {
     float: none;
     display: inline;
-  }
-  ul.mainnav.responsive li.float-right {
-    height:auto;
   }
   ul.mainnav.responsive li a {
     display: block;
