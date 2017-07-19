@@ -24,7 +24,12 @@ ul.mainnav {
 	width: 100%;
 }
 
-ul.mainnav li {float: left;}
+ul.mainnav li {
+  float: left;
+  text-align:center;
+  height: 52px;
+  line-height: 22px;
+}
 
 ul.mainnav li a{
   padding-left: 18px;
