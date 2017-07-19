@@ -1,4 +1,4 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+// Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon
 function screenAdjust() {
     var x = document.getElementById("mynav");
     var y = document.getElementById("mybody");
@@ -12,6 +12,9 @@ function screenAdjust() {
     }
 }
 
+// Description: Hides dropdown menu after clicking dropdown menu item
+//    Input: Null
+//    Output: Null
 function clickDropdownItem(){
 	var x = document.getElementById("mynav");
     var y = document.getElementById("mybody");
@@ -21,16 +24,9 @@ function clickDropdownItem(){
     }
 }
 
-
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-    }, 500);
-    return false;
-});
-
-
-
+// Description: Scrolls page to the anchor specified
+//    Input: Anchor ID or name
+//    Output: Null
 function scrollToAnchor(anchorID){
     var aTag = $("a[name='"+ anchorID +"']");
     $('html,body').animate({scrollTop: aTag.offset().top},350,'swing');
