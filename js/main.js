@@ -5,6 +5,9 @@ function screenAdjust() {
   var y = document.getElementById("mybody");
   $("#mynav").toggleClass('show-items');
   $("#mybody").toggleClass('show-items');
+  if($('#mynav').hasClass('initial')){
+    $("#mynav").toggleClass('initial');
+  }
 }
 
 // Description: Hides dropdown menu after clicking dropdown menu item
