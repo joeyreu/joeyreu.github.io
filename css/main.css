@@ -9,14 +9,10 @@ a.logo {
     width: 20px;
 }
 
-
-ul {
+ul.mainnav {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-ul.mainnav {
   opacity: 0.85;
 
   overflow: hidden;
@@ -123,15 +119,111 @@ h1, p{text-align: center;}
 
 
 @media screen and (max-width:680px) {
+
+  ul.mainnav {
+    position: fixed;
+  }
   ul.mainnav li.right-items {
-    display:none;
+    float: none;
+    display: inline;
+
+
+
+    animation-name: derp;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
   }
 
+  ul.mainnav li.right-items > a {
+    display: block;
+
+    animation-name: derp;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
 
   ul.mainnav li.icon {
     float: right;
     display: inline-block;
   }
+  /* TEST */
+  ul.mainnav {
+    position: fixed;
+  }
+
+  ul.mainnav li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.mainnav div{
+    width:100%;
+  }
+
+  ul.mainnav li.right-items {
+    float: none;
+    display: inline;
+    opacity: 0;
+    height: 0;
+
+    animation-name: hide-frames;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+  ul.mainnav li.right-items > a {
+    opacity: 0;
+    height: 0;
+
+    animation-name: hide-frames;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+
+
+  ul.mainnav li a {
+    display: block;
+
+  }
+
+
+
+  ul.mainnav li a.dropdown {
+    background-color: #555;
+    text-align:center;
+  }
+
+  body {
+    padding-top: 0px;
+  }
+
+  body span {
+    height: 0px; /*same height as header*/
+  }
+
+  /*TEST END */
 
   ul.mainnav.show-items {
     position: fixed;
@@ -206,11 +298,27 @@ h1, p{text-align: center;}
     opacity: 0;
     height:0;
     padding: 0;
+    
   }
 
   100%{
     opacity: 0.9;
     height:20px;
+  }
+
+}
+
+@keyframes hide-frames{
+  0%{
+    opacity: 0.9;
+    height:20px;
+  }
+
+  100%{
+
+    opacity: 0;
+    height:0;
+    padding: 0;
   }
 
 }
