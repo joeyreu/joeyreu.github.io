@@ -17,11 +17,18 @@ ul {
 }
 
 ul.mainnav {
+  opacity: 0.85;
+
   overflow: hidden;
   background-color: #333;
   top: 0;
   position: fixed;
 	width: 100%;
+  -moz-transition: height .4s ease-in-out;
+  -o-transition: height .4s ease-in-out;
+  -webkit-transition: height .4s ease-in-out;
+  transition: height .4s ease-in-out;
+
 }
 
 ul.mainnav li {float: left;}
@@ -43,25 +50,28 @@ ul.mainnav li a{
 }
 ul.mainnav li a:hover {background-color: #c6cde3;}
 
-ul.mainnav li.float-right {
+ul.mainnav li.right-items {
 }
 
-ul.mainnav li.float-right a{
+ul.mainnav li.right-items a{
   color: white;
-  height: 20px;
-  display: inline-block;
-  padding: 16px;
-  text-decoration: none;
-  -moz-transition: all .4s ease-in;
-  -o-transition: all .4s ease-in;
-  -webkit-transition: all .4s ease-in;
-  transition: all .4s ease-in;
   background-color: #333;
 }
 
-ul.mainnav li.float-right a:hover {background-color: #555;}
+ul.mainnav li.right-items a:hover {background-color: #555;}
 
-ul.mainnav li.float-right a.dropdown:hover {background-color: #666;}
+ul.mainnav li.right-items a.dropdown:hover {background-color: #666;}
+
+ul.mainnav li.hidden-items{
+  display:none;
+}
+ul.mainnav li.hidden-items a{
+  width:100%;
+  color: white;
+  background-color: #333;
+}
+ul.mainnav li.hidden-items a:hover {background-color: #555;}
+ul.mainnav li.hidden-items a.dropdown:hover {background-color: #666;}
 
 ul.mainnav li.icon a{
     margin-right: 0;
@@ -91,7 +101,9 @@ h1, p{text-align: center;}
 
 .section-contact{
   background-color: lightblue;
-  height:10vh;
+  display:block;
+  overflow:auto;
+  padding-top:10px;
 }
 
 
@@ -101,58 +113,104 @@ h1, p{text-align: center;}
   visibility: hidden;
 }
 
+.nav-right{
+  float:right;
+}
+
 
 
 
 
 
 @media screen and (max-width:680px) {
-  ul.mainnav li.float-right {
-    display: none;
+  ul.mainnav li.right-items {
+    display:none;
   }
+
 
   ul.mainnav li.icon {
     float: right;
     display: inline-block;
   }
-}
 
-
-
-@media screen and (max-width:680px) {
-  ul.mainnav.responsive {
+  ul.mainnav.show-items {
     position: fixed;
   }
-  ul.mainnav.responsive li.icon {
-    position: absolute;
 
+  ul.mainnav.show-items li.icon {
+    position: absolute;
     right: 0;
     top: 0;
   }
-  ul.mainnav.responsive div{
+
+  ul.mainnav.show-items div{
     width:100%;
   }
-  ul.mainnav.responsive li {
+
+  ul.mainnav.show-items li.right-items {
     float: none;
     display: inline;
+    opacity: 0;
+    height: 0;
+
+    animation-name: show-frames;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
   }
-  ul.mainnav.responsive li a {
+
+  ul.mainnav.show-items li.right-items > a {
+    opacity: 0;
+    height: 0;
+
+    animation-name: show-frames;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+
+
+  ul.mainnav.show-items li a {
     display: block;
 
-
   }
 
-  ul.mainnav.responsive li a.dropdown {
+
+
+  ul.mainnav.show-items li a.dropdown {
     background-color: #555;
     text-align:center;
   }
 
-  body.responsive {
+  body.show-items {
     padding-top: 0px;
   }
 
-  body.responsive span {
-
+  body.show-items span {
     height: 0px; /*same height as header*/
   }
+
+}
+
+@keyframes show-frames{
+  0%{
+    opacity: 0;
+    height:0;
+    padding: 0;
+  }
+
+  100%{
+    opacity: 0.9;
+    height:20px;
+  }
+
 }
