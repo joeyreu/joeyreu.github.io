@@ -154,7 +154,11 @@ function Circle(x, y, dx, dy, radius){
 }
 
 var circleArray = [];
-for(var i = 0; i < 500; i ++){
+var numCircles = 800;
+if(canvas.width < 680){
+  numCircles = 200;
+}
+for(var i = 0; i < numCircles; i ++){
   var radius = Math.random() * 3 + 1;
   var x = Math.random()*(window.innerWidth - radius*2) + radius;
   var y = Math.random()*(window.innerHeight - radius*2) + radius;
