@@ -39,8 +39,9 @@ function scrollToAnchor(anchorID){
 
 
 var canvas = document.querySelector('canvas');
+var homediv = $("#home-div").height();
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = homediv;
 
 var c = canvas.getContext('2d');
 
@@ -104,7 +105,7 @@ window.addEventListener('mousemove',
 window.addEventListener('resize',
   function(){
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = homediv;
     init();
 });
 
@@ -170,7 +171,7 @@ function init() {
   for(var i = 0; i < numCircles; i ++){
     var radius = Math.random() * 3 + 1;
     var x = Math.random()*(window.innerWidth - radius*2) + radius;
-    var y = Math.random()*(window.innerHeight - radius*2) + radius;
+    var y = Math.random()*(homediv - radius*2) + radius;
     var dx = (Math.random() - 0.5)*2;
     var dy = (Math.random() - 0.5)*2;
 
@@ -187,3 +188,24 @@ function animate(){
 }
 init();
 animate();
+
+
+// window.onload = draw;
+//
+
+//
+// function draw() {
+//   var canvas = document.getElementById("mycanvas");
+//   var c = canvas.getContext("2d");
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
+//   animate();
+// }
+//
+// var canvas = document.getElementById("mycanvas");
+// var c = canvas.getContext("2d");
+// c.beginPath();
+// c.arc(200, 200, 30, 0, Math.PI*2, false);
+// c.strokeStyle='blue';
+// c.stroke();
+//
