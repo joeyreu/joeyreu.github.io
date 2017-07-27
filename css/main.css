@@ -13,7 +13,10 @@ ul.mainnav {
   list-style: none;
   padding: 0;
   margin: 0;
-  opacity: 0.85;
+  z-index: 1; /* z index greater than the div with absolute position since
+  the navbar needs to be on top of everything else */
+  opacity: 0.95;
+
 
   overflow: hidden;
   background-color: #333;
@@ -95,6 +98,11 @@ h1, p{text-align: center;}
   padding-top:20vh;
 }
 
+.section-home{
+  width: 100%;
+  height: 100vh;
+}
+
 .section-contact{
   background-color: lightblue;
   display:block;
@@ -122,43 +130,12 @@ h1, p{text-align: center;}
   ul.mainnav.initial li.right-items{
     display:none;
   }
-  ul.mainnav {
-    position: fixed;
-  }
-  ul.mainnav li.right-items {
-    float: none;
-    display: inline;
-
-
-
-    animation-name: derp;
-    animation-duration: 600ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-  }
-
-  ul.mainnav li.right-items > a {
-    display: block;
-
-    animation-name: derp;
-    animation-duration: 600ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-  }
 
   ul.mainnav li.icon {
     float: right;
     display: inline-block;
   }
-  /* TEST */
+  /* Hidden Items */
   ul.mainnav {
     position: fixed;
   }
@@ -203,8 +180,6 @@ h1, p{text-align: center;}
     animation-play-state: running;
   }
 
-
-
   ul.mainnav li a {
     display: block;
 
@@ -225,7 +200,7 @@ h1, p{text-align: center;}
     height: 0px; /*same height as header*/
   }
 
-  /*TEST END */
+  /* Hidden Items End */
 
   ul.mainnav.show-items {
     position: fixed;
@@ -302,9 +277,11 @@ h1, p{text-align: center;}
     padding: 0;
 
   }
-
+  40%{
+    opacity: 0;
+  }
   100%{
-    opacity: 0.9;
+    opacity: 0.95;
     height:20px;
   }
 
@@ -312,10 +289,12 @@ h1, p{text-align: center;}
 
 @keyframes hide-frames{
   0%{
-    opacity: 0.9;
+    opacity: 0.95;
     height:20px;
   }
-
+  60%{
+    opacity: 0;
+  }
   100%{
 
     opacity: 0;
@@ -323,4 +302,11 @@ h1, p{text-align: center;}
     padding: 0;
   }
 
+}
+
+
+
+canvas {
+  background:lightgray;
+  /*border: #000 1px solid;*/
 }

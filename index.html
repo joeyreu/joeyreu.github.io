@@ -6,14 +6,8 @@
 	<meta charset="utf-8">
 	<title>Joseph Reusing</title>
 
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-
-
 </head>
 
 
@@ -23,28 +17,38 @@
 
 		<!--navigation bar-->
 		<ul class="mainnav initial" id="mynav" >
-			<li><a class="logo" onclick="scrollToAnchor('home')">JR</a></li>
+			<li><a class="logo" href="javascript:void(0);" onclick="clickDropdownItem();scrollToAnchor('home')">JR</a></li>
 			<div class="nav-right">
-				<li class="right-items"><a class="dropdown" onclick="clickDropdownItem();scrollToAnchor('about');">About Me</a></li>
-				<li class="right-items"><a class="dropdown" onclick="clickDropdownItem();scrollToAnchor('projects');">Projects</a></li>
-				<li class="right-items"><a class="dropdown" onclick="clickDropdownItem();scrollToAnchor('contact');">Contact</a></li>
+				<li class="right-items"><a class="dropdown" href="javascript:void(0);" onclick="clickDropdownItem();scrollToAnchor('about');">About Me</a></li>
+				<li class="right-items"><a class="dropdown" href="javascript:void(0);" onclick="clickDropdownItem();scrollToAnchor('projects');">Projects</a></li>
+				<li class="right-items"><a class="dropdown" href="javascript:void(0);" onclick="clickDropdownItem();scrollToAnchor('contact');">Contact</a></li>
 			</div>
 			<li class="icon">
-    		<a name="test" href="javascript:void(0);" style="font-size:15px;" onclick="screenAdjust();">☰</a>
+    		<a href="javascript:void(0);" style="font-size:15px;" onclick="screenAdjust();">☰</a>
     	</li>
 
 		</ul>
 		<!-- /navigation bar -->
 	</div>
 
+
+
 	<a class="anchor" name="home"></a>
-	<div class="section" style="background-color: lightblue">
-		<h1>Joseph Reusing</h1>
-		<p>Computer Science - Software - Music - Art</p>
+	<div class="section-home" style="background-color: transparent;">
+
+		<div style="position:absolute;width: 100%; padding-top:35vh;z-index: 0;">
+
+			<h1>Joseph Reusing</h1>
+			<p>Computer Science - Software - Music - Art</p>
+		</div>
+
+		<canvas></canvas>
+
+
 	</div>
 
 	<a class="anchor" name="about"></a>
-	<div class="section" style="background-color: lavender">
+	<div class="section" style="background-color: lavender;">
 		<h1>About Me.</h1>
 	</div>
 
@@ -63,6 +67,7 @@
 	</div>
 
 
-
+	<script src="js/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
