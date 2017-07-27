@@ -8,7 +8,7 @@ a.logo {
     max-width: 20px;
     width: 20px;
 }
-
+/* NAV BAR STYLING */
 ul.mainnav {
   list-style: none;
   padding: 0;
@@ -49,26 +49,21 @@ ul.mainnav li a{
 }
 ul.mainnav li a:hover {background-color: #c6cde3;}
 
-ul.mainnav li.right-items {
-}
-
-ul.mainnav li.right-items a{
-  color: white;
-  background-color: #333;
+ul.mainnav li.right-items a{color: white; background-color: #333;
 }
 
 ul.mainnav li.right-items a:hover {background-color: #555;}
 
 ul.mainnav li.right-items a.dropdown:hover {background-color: #666;}
 
-ul.mainnav li.hidden-items{
-  display:none;
-}
+ul.mainnav li.hidden-items{display:none;}
+
 ul.mainnav li.hidden-items a{
   width:100%;
   color: white;
   background-color: #333;
 }
+
 ul.mainnav li.hidden-items a:hover {background-color: #555;}
 ul.mainnav li.hidden-items a.dropdown:hover {background-color: #666;}
 
@@ -89,6 +84,7 @@ ul.mainnav li.icon a{
 ul.mainnav li.icon a:hover {background-color: #555;}
 
 ul.mainnav li.icon {display: none;}
+/* END NAV BAR STYLING */
 
 h1, p{text-align: center;}
 
@@ -250,7 +246,7 @@ h1, p{text-align: center;}
     display: block;
 
   }
-  
+
   ul.mainnav.show-items li a.dropdown {
     background-color: #555;
     text-align:center;
