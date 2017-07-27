@@ -39,8 +39,9 @@ function scrollToAnchor(anchorID){
 
 
 var canvas = document.querySelector('canvas');
+var homediv = $("#home-div").height();
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = homediv;
 
 var c = canvas.getContext('2d');
 
@@ -96,7 +97,7 @@ var colorArray = [
 
 window.addEventListener('mousemove',
   function(event){
-    console.log('mousemoved');
+    //console.log('mousemoved');
     mouse.x = event.x;
     mouse.y = event.y;
 });
@@ -104,7 +105,7 @@ window.addEventListener('mousemove',
 window.addEventListener('resize',
   function(){
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = homediv;
 
 });
 
