@@ -78,6 +78,13 @@ var c = canvas.getContext('2d');
 // }
 console.log(canvas);
 
+function Circle(x, y){
+  this.x = x;
+  this.y = y;
+
+}
+
+
 var x = Math.random()*window.innerWidth;
 var y = Math.random()*window.innerHeight;
 var dx = (Math.random() - 0.5)*10;
