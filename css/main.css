@@ -34,7 +34,7 @@ ul.mainnav li {float: left;}
 
 ul.mainnav li a{
   padding-left: 18px;
-  color: black;
+  color: white;
   height: 20px;
   display: inline-block;
   padding: 16px;
@@ -43,11 +43,11 @@ ul.mainnav li a{
   -o-transition: all .4s ease-in;
   -webkit-transition: all .4s ease-in;
   transition: all .4s ease-in;
-  background-color: #FAE6FA;
+  background-color: #003FBF;
 
   font-family: "Montserrat", sans-serif;
 }
-ul.mainnav li a:hover {background-color: #c6cde3;}
+ul.mainnav li a:hover {background-color: #82CAFA;}
 
 ul.mainnav li.right-items a{color: white; background-color: #333;
 }
@@ -301,4 +301,9 @@ h1, p{text-align: center;}
 canvas {
   background:black;
   /*border: #000 1px solid;*/
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(black, darkblue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, darkblue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, darkblue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, darkblue); /* Standard syntax */
 }

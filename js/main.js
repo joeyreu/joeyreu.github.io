@@ -88,25 +88,25 @@ var maxRadius = 40;
 var minRadius = 8;
 
 var colorArray = [
-  '#30BFBF',
-  '#008080',
-  '#6CDAE7',
-  '#02A4D3',
-  '#4997D0',
+  '#000F64',
+  '#002B9B',
+  '#003FBF',
+  '#6395E8',
+  '#0047B4',
 ];
 
 window.addEventListener('mousemove',
   function(event){
     //console.log('mousemoved');
-    mouse.x = event.x;
-    mouse.y = event.y;
+    mouse.x = event.pageX;
+    mouse.y = event.pageY;
 });
 
 window.addEventListener('resize',
   function(){
     canvas.width = window.innerWidth;
     canvas.height = homediv;
-
+    init();
 });
 
 
@@ -125,6 +125,10 @@ function Circle(x, y, dx, dy, radius){
     c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
     c.strokeStyle=this.color;
     c.fillStyle=this.color;
+    // c.shadowColor = '#E3EAEF';
+		// c.shadowBlur = 20;
+		// c.shadowOffsetX = 0;
+		// c.shadowOffsetY = 0;
     c.stroke();
     c.fill();
   }
@@ -154,22 +158,26 @@ function Circle(x, y, dx, dy, radius){
 
 }
 
+
+
 var circleArray = [];
-var numCircles = 800;
-if(canvas.width < 680){
-  numCircles = 200;
+function init() {
+  circleArray = [];
+
+  var numCircles = 800;
+  if(canvas.width < 680){
+    numCircles = 200;
+  }
+  for(var i = 0; i < numCircles; i ++){
+    var radius = Math.random() * 3 + 1;
+    var x = Math.random()*(window.innerWidth - radius*2) + radius;
+    var y = Math.random()*(homediv - radius*2) + radius;
+    var dx = (Math.random() - 0.5)*2;
+    var dy = (Math.random() - 0.5)*2;
+
+    circleArray.push(new Circle(x, y, dx, dy, radius))
+  }
 }
-for(var i = 0; i < numCircles; i ++){
-  var radius = Math.random() * 3 + 1;
-  var x = Math.random()*(window.innerWidth - radius*2) + radius;
-  var y = Math.random()*(window.innerHeight - radius*2) + radius;
-  var dx = (Math.random() - 0.5)*2;
-  var dy = (Math.random() - 0.5)*2;
-
-  circleArray.push(new Circle(x, y, dx, dy, radius))
-}
-
-
 
 function animate(){
   requestAnimationFrame(animate);
@@ -178,6 +186,7 @@ function animate(){
     circleArray[i].update();
   }
 }
+init();
 animate();
 
 
