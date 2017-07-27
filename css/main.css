@@ -1,7 +1,9 @@
-body {
+html, body {
     background-color: white;
     margin: 0;
     padding-top: 0px;
+    width: 100%;
+    height:100%;
 }
 
 a.logo {
@@ -89,14 +91,26 @@ ul.mainnav li.icon {display: none;}
 h1, p{text-align: center;}
 
 .section {
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - 20vh);
   padding-top:20vh;
+
 }
 
 .section-home{
   width: 100%;
   height: 100vh;
+}
+.section-about{
+  width: 100%;
+  height: calc(100vh - 20vh);
+  padding-top:20vh;
+
+  background: darkblue; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(darkblue, lavender); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(darkblue, lavender); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(darkblue, lavender); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(darkblue, lavender); /* Standard syntax */
 }
 
 .section-contact{
@@ -116,6 +130,7 @@ h1, p{text-align: center;}
 .nav-right{
   float:right;
 }
+
 
 
 
