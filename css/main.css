@@ -246,15 +246,11 @@ h1, p{text-align: center;}
     animation-play-state: running;
   }
 
-
-
   ul.mainnav.show-items li a {
     display: block;
 
   }
-
-
-
+  
   ul.mainnav.show-items li a.dropdown {
     background-color: #555;
     text-align:center;
