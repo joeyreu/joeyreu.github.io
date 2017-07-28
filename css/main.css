@@ -310,6 +310,7 @@ h1, p{text-align: center;}
 
 }
 
+.home-title::selection { background: transparent;}
 
 
 canvas {
@@ -321,3 +322,5 @@ canvas {
   background: -moz-linear-gradient(black, darkblue); /* For Firefox 3.6 to 15 */
   background: linear-gradient(black, darkblue); /* Standard syntax */
 }
+
+canvas::selection { background: transparent;}

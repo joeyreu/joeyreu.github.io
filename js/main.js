@@ -252,6 +252,9 @@ function Moon(){
   this.x = canvas.width/2;
   this.y = canvas.height;
   this.radius = 50;
+  if(canvas.width < 680){
+    this.radius = 40;
+  }
   this.color = '#FEFCD7';
   this.dy = 1.5;
 
@@ -304,7 +307,7 @@ function init() {
     numStars = 40;
   }
   for(var i = 0; i < numStars; i ++){
-    var radius = Math.random() * 3 + 1;
+    var radius = Math.random() * 1 + 1;
     var x = Math.random()*(canvas.width - radius*2) + radius;
     var y = Math.random()*(canvas.height - radius*2) + radius;
     var dx = Math.random()*0.1 + 0.05;
@@ -336,7 +339,7 @@ function init() {
     var targx = Math.random()*(canvas.width-100) + 50;
     var targy = Math.random()*canvas.height/3;
 
-    if(origincount <= 6){
+    if(origincount <= 4){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, targx, targy, true, true, false));
       origincount++;
     }
@@ -405,15 +408,25 @@ window.addEventListener('mousemove',
 
 window.addEventListener('resize',
   function(){
+    if(canvas.width < 680 && window.innerWidth >=680){
+      if(!$('#mynav').hasClass('initial')){
+        $("#mynav").toggleClass('initial');
+      }
+      if($('#mynav').hasClass('show-items')){
+        $("#mynav").toggleClass('show-items');
+      }
+
+    }
     canvas.width = window.innerWidth;
     canvas.height = $("#home-div").height();
+
     init();
 });
 
 window.addEventListener('click',
   function(event){
     console.log('mouseclicked');
-    if(origincount <= 6){
+    if(origincount <= 4){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
       origincount ++;
     }
