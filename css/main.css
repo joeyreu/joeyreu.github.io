@@ -105,11 +105,11 @@ h1, p{text-align: center;}
   height: calc(100vh - 20vh);
   padding-top:20vh;
 
-  background: darkblue; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(darkblue, lavender); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(darkblue, lavender); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(darkblue, lavender); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(darkblue, lavender); /* Standard syntax */
+  background: #112D03; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#112D03, lightblue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#112D03, lightblue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#112D03, lightblue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#112D03, lightblue); /* Standard syntax */
 }
 
 .section-contact{
