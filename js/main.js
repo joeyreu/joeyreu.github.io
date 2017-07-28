@@ -103,6 +103,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   if(this.hidden){
     this.hue = Math.random()*((hue + 200) - (hue - 200)) + hue - 200;
   }
+  this.linew = 1;
+  if(!this.origin){
+    this.linew = 0.75;
+  }
 
   if(this.starthue != false){
     this.hue = Math.random()*((this.starthue + 30) - (this.starthue - 30)) + this.starthue - 30;
@@ -110,9 +114,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
 
   this.draw = function() {
     c.beginPath();
-    c.lineWidth = 3;
-    if(!origin){
-      c.lineWidth = 1;
+    c.lineWidth = this.linew;
+    if(!this.origin){
+      this.linew *= 0.99;
+      this.brightness *= 0.99;
     }
     // move to the last tracked coordinate in the set, then draw a line to the current x and y
     c.moveTo( this.history[ this.history.length - 1][ 0 ],
@@ -337,9 +342,9 @@ function init() {
   // initial random fireworks
   for(var i = 0; i < 6; i ++){
     var targx = Math.random()*(canvas.width-100) + 50;
-    var targy = Math.random()*canvas.height/3;
+    var targy = Math.random()*canvas.height/3 + 110;
 
-    if(origincount <= 4){
+    if(origincount <= 6){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, targx, targy, true, true, false));
       origincount++;
     }
@@ -425,8 +430,7 @@ window.addEventListener('resize',
 
 window.addEventListener('click',
   function(event){
-    console.log('mouseclicked');
-    if(origincount <= 4){
+    if(origincount <= 6){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
       origincount ++;
     }
