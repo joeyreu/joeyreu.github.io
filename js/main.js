@@ -356,6 +356,8 @@ function init() {
 
 }
 
+var timer = 0;
+var timout = 300;
 
 
 function animate(){
@@ -394,6 +396,22 @@ function animate(){
 
 
   }
+
+  if(timer > timout){
+    // random fireworks
+    for(var i = 0; i < 6; i ++){
+      var targx = Math.random()*(canvas.width-100) + 50;
+      var targy = Math.random()*canvas.height/3 + 110;
+
+      if(origincount <= 6){
+        fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, targx, targy, true, true, false));
+        origincount++;
+      }
+    }
+    timer = 0;
+  }
+
+  timer ++;
 
 
   land.draw();
