@@ -421,7 +421,7 @@ function animate(){
       fireWorks.splice(i, 1);
       origincount --;
       // explosion fireworks
-      var numworks = Math.random()*10+25;
+      var numworks = Math.random()*10+15;
       for(var i = 0; i < numworks; i ++){
         fireWorks.push(new Firework(startx,starty, mouse.x, mouse.y, false, false, starthue));
       }
@@ -489,13 +489,19 @@ window.addEventListener('resize',
 
 window.addEventListener('click',
   function(event){
-    console.log('click');
-
+    // console.log('click');
+    if(!mousedown){
+      if(origincount <= maxfw){
+        fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
+        origincount++;
+      }
+    }
 
 });
 
 window.addEventListener('mousedown',
   function(event){
+    // console.log('mousedown');
     mousedown = true;
 
 });
@@ -505,20 +511,4 @@ window.addEventListener('mouseup',
   function(event){
     mousedown = false;
 
-});
-
-$(document).on('touchstart', '#mycanvas', function(e) {
-  console.log('touchstart');
-  mousedown = true;
-});
-
-$(document).on('touchend', '#mycanvas', function(e) {
-  console.log('touchend');
-  mousedown = false;
-});
-
-$(document).on('touchend', '#mycanvas', function(e) {
-  console.log('touchmove');
-  mouse.x = e.changedTouches[0].pageX;
-  mouse.y = e.changedTouches[0].pageY;
 });
