@@ -267,6 +267,7 @@ function Moon(face){
   this.img = new Image();
   this.img.src = 'res/lolface2.png'; //(window.location.origin + window.location.pathname)
   this.imgopacity = 0;
+  this.donemove = false;
 
   if(this.face){
     this.x = canvas.width/4;
@@ -294,12 +295,12 @@ function Moon(face){
   }
 
   this.update = function(){
-    if(this.y+this.radius > innerHeight*1/4){
+    if(this.y+this.radius > innerHeight*1/3){
       this.y -= this.dy;
 
-      if(this.y+this.radius < innerHeight*3/4){
+      if(this.y+this.radius < innerHeight*1/2){
         if(this.dy > 0.05){
-          this.dy = this.dy*0.997;
+          this.dy = this.dy*0.995;
         }
       }
       // this.x += 0.025;
@@ -320,7 +321,7 @@ function Moon(face){
 
 
 
-var maxfw = 10;
+var maxfw = 6;
 var mousedown = false;
 
 //var moon2 = undefined;
@@ -350,14 +351,14 @@ function init() {
   }else{
     moon.x = canvas.width/2;
 
-    if(moon.y + moon.radius > innerHeight/4){
+    if(moon.y + moon.radius > innerHeight/3){
       // do nothing
       moon.dy = 1;
-      if(moon.y + moon.radius < innerHeight*2/5){
-        moon.dy = 0.1;
+      if(moon.y + moon.radius < innerHeight*1/2){
+        moon.dy = 0.5;
       }
     }else{
-      moon.y = canvas.height/4;
+      moon.y = innerHeight/3;
     }
   }
 
@@ -503,4 +504,17 @@ window.addEventListener('mouseup',
   function(event){
     mousedown = false;
 
+});
+
+$(document).on('touchstart', '#box', function(e) {
+  mousedown = true;
+});
+
+$(document).on('touchend', '#box', function(e) {
+  mousedown = false;
+});
+
+$(document).on('touchend', '#box', function(e) {
+  mouse.x = e.originalEvent.touches[0].pageX;
+  mouse.y = e.originalEvent.touches[0].pageY;
 });
