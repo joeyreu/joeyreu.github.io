@@ -489,6 +489,7 @@ window.addEventListener('resize',
 
 window.addEventListener('click',
   function(event){
+    console.log('click');
 
 
 });
@@ -506,15 +507,18 @@ window.addEventListener('mouseup',
 
 });
 
-$(document).on('touchstart', '#box', function(e) {
+$(document).on('touchstart', '#mycanvas', function(e) {
+  console.log('touchstart');
   mousedown = true;
 });
 
-$(document).on('touchend', '#box', function(e) {
+$(document).on('touchend', '#mycanvas', function(e) {
+  console.log('touchend');
   mousedown = false;
 });
 
-$(document).on('touchend', '#box', function(e) {
-  mouse.x = e.originalEvent.touches[0].pageX;
-  mouse.y = e.originalEvent.touches[0].pageY;
+$(document).on('touchend', '#mycanvas', function(e) {
+  console.log('touchmove');
+  mouse.x = e.changedTouches[0].pageX;
+  mouse.y = e.changedTouches[0].pageY;
 });
