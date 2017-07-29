@@ -260,9 +260,6 @@ function Moon(face){
   this.x = canvas.width/2;
   this.y = canvas.height;
   this.radius = 50;
-  if(canvas.width < 680){
-    this.radius = 40;
-  }
   this.color = '#FEFCD7';
   this.dy = 1.5;
 
