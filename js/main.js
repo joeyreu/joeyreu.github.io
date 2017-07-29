@@ -80,7 +80,7 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
 	this.ty = ty;
 
   this.history = [];
-  this.historyLength = 6;
+  this.historyLength = 2;
 
   this.rotation = undefined;
   this.speed = Math.random()*5 + 5;
@@ -105,7 +105,8 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   }
   this.linew = 1;
   if(!this.origin){
-    this.linew = 0.75;
+    this.speed = Math.random()*5 + 10;
+    this.linew = 1.5;
   }
 
   if(this.starthue != false){
@@ -116,8 +117,8 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
     c.beginPath();
     c.lineWidth = this.linew;
     if(!this.origin){
-      this.linew *= 0.99;
-      this.brightness *= 0.99;
+      this.linew *= 0.95;
+      //this.brightness *= 0.99;
     }
     // move to the last tracked coordinate in the set, then draw a line to the current x and y
     c.moveTo( this.history[ this.history.length - 1][ 0 ],
@@ -255,7 +256,7 @@ function Land(){
 
 
 // Moon
-function Moon(){
+function Moon(face){
   this.x = canvas.width/2;
   this.y = canvas.height;
   this.radius = 50;
@@ -265,6 +266,14 @@ function Moon(){
   this.color = '#FEFCD7';
   this.dy = 1.5;
 
+  this.face = face;
+  this.img = new Image();
+  this.img.src = 'res/lolface2.png'; //(window.location.origin + window.location.pathname)
+  this.imgopacity = 0;
+
+  if(this.face){
+    this.x = canvas.width/4;
+  }
 
   this.draw = function(){
     c.beginPath();
@@ -273,12 +282,18 @@ function Moon(){
 
     c.strokeStyle=this.color;
     c.fillStyle=this.color;
+
     c.shadowColor = '#E3EAEF';
     c.shadowBlur = 50;
     c.shadowOffsetX = 0;
     c.shadowOffsetY = 0;
     c.stroke();
     c.fill();
+
+
+    c.globalAlpha = this.imgopacity;
+    c.drawImage(this.img, this.x-50,this.y-50);
+    c.globalAlpha = 1;
   }
 
   this.update = function(){
@@ -292,6 +307,12 @@ function Moon(){
       }
       // this.x += 0.025;
 
+
+    }else{
+      if(this.imgopacity < 0.4){
+        this.imgopacity += 0.001;
+      }
+
     }
 
     this.draw();
@@ -304,6 +325,8 @@ function Moon(){
 
 var maxfw = 10;
 var mousedown = false;
+
+//var moon2 = undefined;
 
 // Init and Animation
 function init() {
@@ -326,7 +349,7 @@ function init() {
   land = new Land();
 
   if(moon == undefined){
-    moon = new Moon();
+    moon = new Moon(false);
   }else{
     moon.x = canvas.width/2;
 
@@ -340,6 +363,8 @@ function init() {
       moon.y = canvas.height/4;
     }
   }
+
+  //moon2 = new Moon(true);
 
   // initial random fireworks
   for(var i = 0; i < 6; i ++){
@@ -379,6 +404,7 @@ function animate(){
     starArray[i].update();
   }
   moon.update();
+
 
   for(var i = 0; i < fireWorks.length; i ++){
     fireWorks[i].update();
