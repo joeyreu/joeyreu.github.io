@@ -84,7 +84,7 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
 
   this.rotation = undefined;
   this.speed = Math.random()*5 + 5;
-  this.brightness =  Math.random()*30 + 50;
+  this.brightness =  Math.random()*30 + 60;
 
   this.tradius = 5;
   this.hue = Math.random()*((hue + 30) - (hue - 30)) + hue - 30;
@@ -123,6 +123,8 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
     c.moveTo( this.history[ this.history.length - 1][ 0 ],
                this.history[ this.history.length - 1][ 1 ] );
     c.lineTo( this.x, this.y );
+    c.shadowColor = '#E3EAEF';
+    c.shadowBlur = (Math.random() * 20) + 20;
     c.strokeStyle = 'hsl(' + this.hue + ', 100%, ' + this.brightness + '%)';
     c.stroke();
     c.lineWidth = 1;
@@ -300,8 +302,8 @@ function Moon(){
 
 
 
-
-
+var maxfw = 10;
+var mousedown = false;
 
 // Init and Animation
 function init() {
@@ -344,7 +346,7 @@ function init() {
     var targx = Math.random()*(canvas.width-100) + 50;
     var targy = Math.random()*canvas.height/3 + 110;
 
-    if(origincount <= 6){
+    if(origincount <= maxfw){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, targx, targy, true, true, false));
       origincount++;
     }
@@ -360,8 +362,17 @@ var timer = 0;
 var timout = 300;
 
 
+
 function animate(){
   requestAnimationFrame(animate);
+  if(mousedown){
+    if(origincount <= maxfw){
+      fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
+      origincount ++;
+    }
+  }
+
+
   hue += 0.5;
   c.clearRect(0,0,innerWidth, innerHeight);
   for(var i = 0; i < starArray.length; i ++){
@@ -386,7 +397,8 @@ function animate(){
       fireWorks.splice(i, 1);
       origincount --;
       // explosion fireworks
-      for(var i = 0; i < 30; i ++){
+      var numworks = Math.random()*10+25;
+      for(var i = 0; i < numworks; i ++){
         fireWorks.push(new Firework(startx,starty, mouse.x, mouse.y, false, false, starthue));
       }
     }else if(fireWorks[i].alpha <= fireWorks[i].decay){
@@ -399,11 +411,11 @@ function animate(){
 
   if(timer > timout){
     // random fireworks
-    for(var i = 0; i < 6; i ++){
+    for(var i = 0; i < maxfw; i ++){
       var targx = Math.random()*(canvas.width-100) + 50;
       var targy = Math.random()*canvas.height/3 + 110;
 
-      if(origincount <= 6){
+      if(origincount <= maxfw){
         fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, targx, targy, true, true, false));
         origincount++;
       }
@@ -442,15 +454,30 @@ window.addEventListener('resize',
     }
     canvas.width = window.innerWidth;
     canvas.height = $("#home-div").height();
+    if(canvas.width <= 680){
+      maxfw = 1;
+    }else{
+      maxfw = 10;
+    }
 
     init();
 });
 
 window.addEventListener('click',
   function(event){
-    if(origincount <= 6){
-      fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
-      origincount ++;
-    }
+
+
+});
+
+window.addEventListener('mousedown',
+  function(event){
+    mousedown = true;
+
+});
+
+
+window.addEventListener('mouseup',
+  function(event){
+    mousedown = false;
 
 });
