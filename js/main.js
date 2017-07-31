@@ -28,7 +28,7 @@ function clickDropdownItem(){
 //    Output: Null
 function scrollToAnchor(anchorID){
   var aTag = $("a[name='"+ anchorID +"']");
-  $('html,body').animate({scrollTop: aTag.offset().top},350,'swing');
+  $('html,body').animate({scrollTop: aTag.offset().top},700,'swing');
 }
 
 
@@ -92,10 +92,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   this.origin = origin;
   this.angle = Math.random()*(Math.PI * 2);
   this.friction = 0.95;
-	this.gravity = 1;
+	this.gravity = 2;
   this.alpha = 1;
 	// set how fast the particle fades out
-	this.decay = Math.random()*(0.03-0.015) + 0.015;
+	this.decay = Math.random()*(0.04-0.025) + 0.025;
   this.hidden = hidden;
 
   this.starthue = starthue;
@@ -105,8 +105,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   }
   this.linew = 1;
   if(!this.origin){
-    this.speed = Math.random()*5 + 10;
-    this.linew = 1.5;
+    this.speed = Math.random()*5 + 5;
+    this.linew = 2.5;
+    this.brightness =  Math.random()*20 + 80;
+    this.decay = Math.random()*(0.025-0.01) + 0.01;
   }
 
   if(this.starthue != false){
@@ -125,7 +127,7 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
                this.history[ this.history.length - 1][ 1 ] );
     c.lineTo( this.x, this.y );
     c.shadowColor = '#E3EAEF';
-    c.shadowBlur = (Math.random() * 20) + 20;
+    c.shadowBlur = 50;
     c.strokeStyle = 'hsl(' + this.hue + ', 100%, ' + this.brightness + '%)';
     c.stroke();
     c.lineWidth = 1;
@@ -365,7 +367,7 @@ function init() {
   //moon2 = new Moon(true);
 
   // initial random fireworks
-  for(var i = 0; i < 6; i ++){
+  for(var i = 0; i < maxfw; i ++){
     var targx = Math.random()*(canvas.width-100) + 50;
     var targy = Math.random()*canvas.height/3 + 110;
 
@@ -382,7 +384,7 @@ function init() {
 }
 
 var timer = 0;
-var timout = 300;
+var timout = 350;
 
 
 
@@ -434,6 +436,7 @@ function animate(){
   }
 
   if(timer > timout){
+    var randnum = Math.random()*maxfw;
     // random fireworks
     for(var i = 0; i < maxfw; i ++){
       var targx = Math.random()*(canvas.width-100) + 50;
