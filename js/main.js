@@ -105,10 +105,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   }
   this.linew = 1;
   if(!this.origin){
-    this.speed = Math.random()*5 + 5;
+    this.speed = Math.random()*5 + 7;
     this.linew = 2.5;
     this.brightness =  Math.random()*20 + 80;
-    this.decay = Math.random()*(0.025-0.01) + 0.01;
+    this.decay = Math.random()*(0.04-0.025) + 0.025;
   }
 
   if(this.starthue != false){
@@ -323,7 +323,7 @@ function Moon(face){
 
 
 
-var maxfw = 6;
+var maxfw = 10;
 var mousedown = false;
 
 //var moon2 = undefined;
@@ -360,7 +360,7 @@ function init() {
         moon.dy = 0.5;
       }
     }else{
-      moon.y = innerHeight/3;
+      moon.y = innerHeight/3 - moon.radius;
     }
   }
 
@@ -423,7 +423,7 @@ function animate(){
       fireWorks.splice(i, 1);
       origincount --;
       // explosion fireworks
-      var numworks = Math.random()*10+15;
+      var numworks = Math.random()*15+25;
       for(var i = 0; i < numworks; i ++){
         fireWorks.push(new Firework(startx,starty, mouse.x, mouse.y, false, false, starthue));
       }
