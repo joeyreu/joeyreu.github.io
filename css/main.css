@@ -110,7 +110,7 @@ ul.mainnav li.icon {display: none;}
 .section-about{
   width: 100%;
   padding-bottom: 10vh;
-  padding-top:10vh;
+  padding-top:90px;
 
   background: white; /* For browsers that do not support gradients */
   /*background: -webkit-linear-gradient(#112D03, #002F2F);
@@ -122,8 +122,8 @@ ul.mainnav li.icon {display: none;}
 
 .section-projects{
   width: 100%;
-  height: calc(100vh - 20vh);
-  padding-top:20vh;
+  height: calc(100vh - 10vh);
+  padding-top:90px;
 
   background: #2F6A87; /* For browsers that do not support gradients */
 }
@@ -133,7 +133,7 @@ ul.mainnav li.icon {display: none;}
   display:block;
   overflow:auto;
   padding-bottom: 10vh;
-  padding-top:10vh;
+  padding-top:104px;
 }
 
 .hometext {
@@ -171,12 +171,22 @@ p.abouttext{
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
 }
 
+h1,h2.projectstext{
+  margin: 0px;
+  padding: 0px;
+}
+
 .contacttext{
   text-align: center;
   padding: 0px;
   color:white;
   font-family: "Montserrat", sans-serif;
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
+}
+
+h1,h2.contacttext{
+  margin: 0px;
+  padding: 0px;
 }
 
 .anchor{
