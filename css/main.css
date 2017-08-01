@@ -511,7 +511,7 @@ a.link {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: solid 2px black;
+  border: solid 3px black;
   z-index: 2;
 
   -moz-transition: all .4s ease-in-out;
@@ -519,6 +519,30 @@ a.link {
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 
+}
+
+ul.links li#linkedin a.link i{
+  color:#0077B5;
+}
+
+ul.links li#linkedin a.link:hover i{
+  color:white;
+}
+
+ul.links li#trailhead a.link i{
+  color:#1798c1;
+}
+
+ul.links li#trailhead a.link:hover i{
+  color:white;
+}
+
+ul.links li#codepen a.link i{
+  color:#555;
+}
+
+ul.links li#codepen a.link:hover i{
+  color:white;
 }
 
 ul.links li a .fa {
@@ -532,6 +556,8 @@ ul.links li a:hover .fa {
 	color: #FFFFFF;
 	transform: rotateY(360deg);
 }
+
+
 
 
 ul.links li a:before {
