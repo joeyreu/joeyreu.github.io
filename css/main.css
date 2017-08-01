@@ -14,7 +14,7 @@ ul.mainnav {
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 1; /* z index greater than the div with absolute position since
+  z-index: 10; /* z index greater than the div with absolute position since
   the navbar needs to be on top of everything else */
   opacity: 1;
 
@@ -111,22 +111,24 @@ ul.mainnav li.icon {display: none;}
   width:100%;
   background: white; /* For browsers that do not support gradients */
   padding-bottom: 30px;
-  background: -webkit-linear-gradient(#112D03, #2F6A87);
-  background: -o-linear-gradient(#112D03, #2F6A87);
-  background: -moz-linear-gradient(#112D03, #2F6A87);
-  background: linear-gradient(#112D03, #2F6A87);
-
+  background: #1A3F5C;
+  background: -webkit-linear-gradient(#0B1C02, #1A3F5C);
+  background: -o-linear-gradient(#0B1C02, #1A3F5C);
+  background: -moz-linear-gradient(#0B1C02, #1A3F5C);
+  background: linear-gradient(#0B1C02, #1A3F5C);
 }
+
 .section-about{
-  border: 3px solid #555;
+  border: 3px solid #333;
   display:block;
   margin:auto;
   z-index:10;
+  max-width: 1400px;
 
   width: 95%;
-  padding-bottom: 90px;
-  padding-top:90px;
-  height: 90%;
+  padding-bottom: 50px;
+  padding-top:50px;
+
 
   border-radius: 15px;
   box-shadow: 0px 10px 20px #333;
@@ -144,11 +146,11 @@ ul.mainnav li.icon {display: none;}
   height: calc(100vh - 10vh);
   padding-top:90px;
 
-  background: #2F6A87; /* For browsers that do not support gradients */
+  background: #1A3F5C; /* For browsers that do not support gradients */
 }
 
 .section-contact{
-  background-color: #2C3E50;
+  background-color: #0E2333;
   display:block;
   overflow:auto;
   padding-bottom: 10vh;
@@ -164,23 +166,31 @@ ul.mainnav li.icon {display: none;}
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
 }
 
+
 .abouttext {
-  text-align: center;
+  text-align: left;
   padding: 0px;
   color:Black;
   font-family: "Montserrat", sans-serif;
+}
 
+.title{
+  text-align: center;
 }
 
 h1,h2.abouttext{
   margin: 0px;
   padding: 0px;
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
+
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 p.abouttext{
+  font-family: "Open Sans", sans-serif;
   margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 15px;
   font-size: 14pt;
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
 }
@@ -224,10 +234,30 @@ h1,h2.contacttext{
 
 
 
+.left-section{
+  width: 50%;
+  vertical-align: top;
+}
 
+.right-section{
+  width: 50%;
+  vertical-align: top;
+}
 
+@media screen and (max-width:900px) {
+  .left-section{
+    width: 100%;
+    display:block;
+  }
+
+  .right-section{
+    width: 100%;
+    display:block;
+  }
+}
 
 @media screen and (max-width:680px) {
+
   ul.mainnav.initial li.right-items{
     display:none;
   }
@@ -401,11 +431,6 @@ h1,h2.contacttext{
 
 }
 
-.title{
-  color:white;
-  font-family: "Montserrat", sans-serif;
-  text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
-}
 
 
 
@@ -429,14 +454,138 @@ a.link {
 
 }
 
-.links{
-  text-align:center;
-  display:block;
-  width:50%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul.links {
+  text-align: center;
+	display: inline-block;
+  list-style-type: none;
+  width: 100%;
+  margin:0;
+  padding:0;
+
+
+}
+
+ul.links li{
+
+  list-style:none;
+  display:inline;
+  float:left;
+}
+
+a.link {
+  text-align: center;
+  display: block;
+  border-style: solid;
+
+
+
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+  font-size: 60px;
+  line-height: 75px;
+
+  background-color: #FFFFFF;
+  text-align: center;
+
+
+  margin: 5px 5px;
+
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: solid 2px black;
+  z-index: 2;
+
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+
+}
+
+ul.links li a .fa {
+	position: relative;
+	color: #262626;
+	transition: .5s;
+	z-index: 3;
+}
+
+ul.links li a:hover .fa {
+	color: #FFFFFF;
+	transform: rotateY(360deg);
 }
 
 
-div.description{
-  display:block;
-  width: 50%;
+ul.links li a:before {
+
+
+	position: absolute;
+	top: 100% ;
+	left: 0% ;
+	width: 100%;
+	height: 100%;
+	background-color: #FF0000;
+	transition: .5s;
+	z-index:2 ;
+
+  line-height: 100px;
+  font-size: 20px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul.links li a:hover{
+  font-size: 25px;
+  line-height: 0px;
+}
+
+ul.links li a:hover:before {
+	top: 0 ;
+}
+
+ul.links li:nth-child(1) a:before {
+	background-color:black ;
+
+	content: 'GitHub';
+
+}
+ul.links li:nth-child(2) a:before {
+	background-color:#555 ;
+	content: 'CodePen';
+
+}
+ul.links li:nth-child(3) a:before {
+	background-color:#0077B5 ;
+	content: 'Linkedin';
+
+}
+ul.links li:nth-child(4) a:before {
+	background-color:#1798c1;
+	content: 'trailhead';
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
 }

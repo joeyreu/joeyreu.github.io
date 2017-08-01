@@ -238,7 +238,7 @@ function Land(){
   this.y = canvas.height;
   this.radiusX = this.x*1.2;
   this.radiusY = this.y*0.23;
-  this.color = '#112D03';
+  this.color = '#0B1C02';
 
   this.draw = function(){
     c.beginPath();
