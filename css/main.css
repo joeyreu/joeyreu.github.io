@@ -244,7 +244,9 @@ h1,h2.contacttext{
   vertical-align: top;
 }
 
-@media screen and (max-width:900px) {
+
+
+@media screen and (max-width:680px) {
   .left-section{
     width: 100%;
     display:block;
@@ -254,9 +256,6 @@ h1,h2.contacttext{
     width: 100%;
     display:block;
   }
-}
-
-@media screen and (max-width:680px) {
 
   ul.mainnav.initial li.right-items{
     display:none;
@@ -327,7 +326,7 @@ h1,h2.contacttext{
     padding-top: 0px;
   }
 
-  body span {
+  body {
     height: 0px; /*same height as header*/
   }
 
@@ -391,9 +390,7 @@ h1,h2.contacttext{
     padding-top: 0px;
   }
 
-  body.show-items span {
-    height: 0px; /*same height as header*/
-  }
+
 
 }
 
@@ -564,23 +561,23 @@ ul.links li a:hover:before {
 	top: 0 ;
 }
 
-ul.links li:nth-child(1) a:before {
+ul.links li#github a:before {
 	background-color:black ;
 
 	content: 'GitHub';
 
 }
-ul.links li:nth-child(2) a:before {
+ul.links li#codepen a:before {
 	background-color:#555 ;
 	content: 'CodePen';
 
 }
-ul.links li:nth-child(3) a:before {
+ul.links li#linkedin a:before {
 	background-color:#0077B5 ;
 	content: 'Linkedin';
 
 }
-ul.links li:nth-child(4) a:before {
+ul.links li#trailhead a:before {
 	background-color:#1798c1;
 	content: 'trailhead';
 }
