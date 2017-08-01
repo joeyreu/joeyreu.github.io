@@ -16,7 +16,7 @@ ul.mainnav {
   margin: 0;
   z-index: 1; /* z index greater than the div with absolute position since
   the navbar needs to be on top of everything else */
-  opacity: 0.85;
+  opacity: 1;
 
 
   overflow: hidden;
@@ -378,7 +378,7 @@ h1,h2.contacttext{
     opacity: 0;
   }
   100%{
-    opacity: 0.85;
+    opacity:1;
     height:20px;
   }
 
@@ -386,7 +386,7 @@ h1,h2.contacttext{
 
 @keyframes hide-frames{
   0%{
-    opacity: 0.85;
+    opacity: 1;
     height:20px;
   }
   60%{
