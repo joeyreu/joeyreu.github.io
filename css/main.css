@@ -187,6 +187,13 @@ h1,h2.abouttext{
   margin-right: 50px;
 }
 
+h3.abouttext{
+  text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
+
+  text-align: center;
+  margin: 0px 50px 10px 50px;
+}
+
 p.abouttext{
   font-family: "Open Sans", sans-serif;
   margin-left: 50px;
@@ -555,9 +562,13 @@ ul.links li a .fa {
 ul.links li a:hover .fa {
 	color: #FFFFFF;
 	transform: rotateY(360deg);
+  font-size: 25px;
+
 }
 
-
+ul.links li a:hover{
+  line-height: 0px;
+}
 
 
 ul.links li a:before {
@@ -578,10 +589,7 @@ ul.links li a:before {
   font-family: "Montserrat", sans-serif;
 }
 
-ul.links li a:hover{
-  font-size: 25px;
-  line-height: 0px;
-}
+
 
 ul.links li a:hover:before {
 	top: 0 ;

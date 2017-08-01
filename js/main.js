@@ -333,7 +333,8 @@ function init() {
   starArray = [];
 
   var numStars = 50;
-  if(canvas.width < 680){
+  if(canvas.width <= 680){
+    maxfw = 1;
     numStars = 40;
   }
   for(var i = 0; i < numStars; i ++){
