@@ -309,7 +309,7 @@ function Moon(face){
 
 
     }else{
-      if(this.imgopacity < 0.4){
+      if(this.imgopacity < 0.45){
         this.imgopacity += 0.001;
       }
 

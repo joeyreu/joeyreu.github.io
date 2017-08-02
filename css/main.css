@@ -16,19 +16,18 @@ ul.mainnav {
   margin: 0;
   z-index: 10; /* z index greater than the div with absolute position since
   the navbar needs to be on top of everything else */
-  opacity: 1;
-
+  opacity: 0.95;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 
   overflow: hidden;
-  background-color: #333;
+  background-color: #191919;
   top: 0;
   position: fixed;
 	width: 100%;
-  -moz-transition: height .4s ease-in-out;
-  -o-transition: height .4s ease-in-out;
-  -webkit-transition: height .4s ease-in-out;
-  transition: height .4s ease-in-out;
 
+
+  box-shadow: 0px 5px 10px black;
 }
 
 ul.mainnav li {float: left;}
@@ -47,16 +46,11 @@ ul.mainnav li a{
   background-color: #003FBF;
 
 
-  background-color: -webkit-linear-gradient(black, #003FBF); /* For Safari 5.1 to 6.0 */
-  background-color: -o-linear-gradient(black, #003FBF); /* For Opera 11.1 to 12.0 */
-  background-color: -moz-linear-gradient(black, #003FBF); /* For Firefox 3.6 to 15 */
-  background-color: linear-gradient(black, #003FBF); /* Standard syntax */
-
   font-family: "Montserrat", sans-serif;
 }
 ul.mainnav li a:hover {background-color: #82CAFA;}
 
-ul.mainnav li.right-items a{color: white; background-color: #333;
+ul.mainnav li.right-items a{color: white; background-color: #191919;
 }
 
 ul.mainnav li.right-items a:hover {background-color: #555;}
@@ -68,7 +62,7 @@ ul.mainnav li.hidden-items{display:none;}
 ul.mainnav li.hidden-items a{
   width:100%;
   color: white;
-  background-color: #333;
+  background-color: #191919;
 }
 
 ul.mainnav li.hidden-items a:hover {background-color: #555;}
@@ -85,7 +79,7 @@ ul.mainnav li.icon a{
     -o-transition: all .4s ease-in;
     -webkit-transition: all .4s ease-in;
     transition: all .4s ease-in;
-    background-color: #333;
+    background-color: #191919;
 }
 
 ul.mainnav li.icon a:hover {background-color: #555;}
@@ -120,12 +114,12 @@ ul.mainnav li.icon {display: none;}
 
 .section-about{
   /*border: 3px solid #1A3F5C;*/
-  display:block;
+
   margin:auto;
-  z-index:10;
+  z-index:1;
   max-width: 1400px;
 
-  width: 95%;
+  width: 90%;
   padding-bottom: 50px;
   padding-top:50px;
 
@@ -138,7 +132,10 @@ ul.mainnav li.icon {display: none;}
   background: -o-linear-gradient(#112D03, #002F2F);
   background: -moz-linear-gradient(#112D03, #002F2F);
   background: linear-gradient(#112D03, #002F2F);*/
-
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .section-projects{
@@ -184,11 +181,11 @@ h1,h2.abouttext{
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
 
   margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 h3.abouttext{
-  text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
+  text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
 
   text-align: center;
   margin: 0px 50px 10px 50px;
@@ -197,7 +194,7 @@ h3.abouttext{
 p.abouttext{
   font-family: "Open Sans", sans-serif;
   margin-left: 50px;
-  margin-right: 15px;
+  margin-right:10px;
   font-size: 14pt;
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
 }
@@ -257,6 +254,15 @@ h1,h2.contacttext{
   .left-section{
     width: 100%;
     display:block;
+  }
+
+  h1,h2.abouttext{
+    margin-right: 50px;
+  }
+
+
+  p.abouttext{
+    margin-right:50px;
   }
 
   .right-section{
@@ -503,11 +509,11 @@ a.link {
 
 
 
-  padding: 10px;
-  width: 70px;
-  height: 70px;
-  font-size: 70px;
-  line-height: 70px;
+  padding: 0px;
+  width: 90px;
+  height: 90px;
+  font-size: 60px;
+  line-height: 90px;
 
   background-color: #FFFFFF;
   text-align: center;
@@ -528,8 +534,14 @@ a.link {
 
 }
 
+ul.links li#github a.link i{
+  text-shadow: 0.05em 0.08em 6px rgba(0, 0, 0, 0.26);
+}
+
+
 ul.links li#linkedin a.link i{
   color:#0077B5;
+  text-shadow: 0.05em 0.08em 6px rgba(0, 0, 0, 0.26);
 }
 
 ul.links li#linkedin a.link:hover i{
@@ -538,6 +550,7 @@ ul.links li#linkedin a.link:hover i{
 
 ul.links li#trailhead a.link i{
   color:#1798c1;
+  text-shadow: 0.05em 0.08em 6px rgba(0, 0, 0, 0.26);
 }
 
 ul.links li#trailhead a.link:hover i{
@@ -546,6 +559,7 @@ ul.links li#trailhead a.link:hover i{
 
 ul.links li#codepen a.link i{
   color:#555;
+  text-shadow: 0.05em 0.08em 6px rgba(0, 0, 0, 0.26);
 }
 
 ul.links li#codepen a.link:hover i{
@@ -567,7 +581,7 @@ ul.links li a:hover .fa {
 }
 
 ul.links li a:hover{
-  line-height: 0px;
+  line-height: 20px;
 }
 
 
