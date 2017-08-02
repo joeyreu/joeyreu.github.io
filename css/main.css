@@ -13,18 +13,22 @@ a.logo {
 ul.mainnav {
   list-style: none;
   padding: 0;
-  margin: 0 2.5%;
+  
   z-index: 10; /* z index greater than the div with absolute position since
   the navbar needs to be on top of everything else */
   opacity: 0.95;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
 
   overflow: hidden;
   background-color: #191919;
   top: 0;
   position: fixed;
+
+
+
+  margin: 0 2.5%;
 	width: 95%;
 
 
@@ -120,7 +124,7 @@ ul.mainnav li.icon {display: none;}
 
   margin:auto;
   z-index:1;
-  max-width: 1400px;
+  max-width: 1200px;
 
   width: 90%;
   padding-bottom: 50px;
@@ -174,6 +178,23 @@ ul.mainnav li.icon {display: none;}
   font-family: "Montserrat", sans-serif;
 }
 
+.abt_Label{
+  display:inline-block;
+  min-width: 180px;
+  float:left;
+  color: #555;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.abt_Content{
+  display:inline-block;
+  color:gray;
+  font-size: 14px;
+  min-width:140px;
+}
+
+
 .title{
   text-align: center;
 }
@@ -183,7 +204,7 @@ h1,h2.abouttext{
   padding: 0px;
   text-shadow: 0.1em 0em 0.1em rgba(0, 0, 0, 0.26);
 
-  margin-left: 50px;
+  margin-left: 30px;
   margin-right: 10px;
 }
 
@@ -191,15 +212,17 @@ h3.abouttext{
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
 
   text-align: center;
-  margin: 0px 50px 10px 50px;
+  margin: 0px 30px 10px 30px;
 }
 
 p.abouttext{
   font-family: "Open Sans", sans-serif;
-  margin-left: 50px;
+  margin-left: 30px;
   margin-right:10px;
   font-size: 14pt;
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .projectstext {
@@ -243,29 +266,36 @@ h1,h2.contacttext{
 
 .left-section{
   width: 50%;
-  vertical-align: top;
+
 }
 
 .right-section{
   width: 50%;
-  vertical-align: top;
+  
 }
 
 
+hr.divider{
+  margin:10px 10px 0 30px;
+}
 
 @media screen and (max-width:680px) {
+  hr.divider{
+    margin:10px 30px 0 30px;
+  }
+
   .left-section{
     width: 100%;
     display:block;
   }
 
   .right-section h1,h2.abouttext{
-    margin-right: 50px;
+    margin-right: 30px;
   }
 
 
   p.abouttext{
-    margin-right:50px;
+    margin-right:30px;
   }
 
   .right-section{
