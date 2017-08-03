@@ -215,7 +215,7 @@ p.skillset{
 
 .skill{
   margin: 2px 0px 2px 0px;
-  padding:2px 7px 2px 7px;
+  padding:3px 7px 3px 7px;
   font-family: "Montserrat", sans-serif;
   border: 1px solid #1A3F5C;
   border-radius: 5px;
@@ -730,5 +730,14 @@ ul.links li#trailhead a:before {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+
 
 
