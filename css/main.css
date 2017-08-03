@@ -53,6 +53,7 @@ ul.mainnav li a{
   background-color: #003FBF;
 
 
+
   font-family: "Montserrat", sans-serif;
 }
 ul.mainnav li a:hover {background-color: #82CAFA;}
@@ -184,14 +185,67 @@ ul.mainnav li.icon {display: none;}
   float:left;
   color: #555;
   font-weight: bold;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
+
+
 
 .abt_Content{
   display:inline-block;
   color:gray;
   font-size: 14px;
   min-width:140px;
+}
+
+
+
+
+
+p.skillset{
+  
+  
+  padding-left:30px;
+
+  margin-top:0px;
+  margin-bottom:0px;
+  vertical-align: center;
+  text-align:center;
+  
+}
+
+.skill{
+  margin: 2px 0px 2px 0px;
+  padding:2px 7px 2px 7px;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #1A3F5C;
+  border-radius: 5px;
+
+  display:inline-block;
+}
+
+.skl_Label{
+  text-align: left;
+  display:inline-block;
+  width:100%;
+  float:left;
+  color:#555;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 5px;
+
+
+}
+
+.lesser{
+  color: #555;
+}
+
+span.skl_Content{
+  display:block;
+  margin:0px 0px;
+  padding-bottom:8px;
+
+  width:100%;
 }
 
 
@@ -212,7 +266,7 @@ h3.abouttext{
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
 
   text-align: center;
-  margin: 0px 30px 10px 30px;
+  margin: 5px 30px 5px 30px;
 }
 
 p.abouttext{
@@ -221,7 +275,7 @@ p.abouttext{
   margin-right:10px;
   font-size: 14pt;
   text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);
-  margin-top: 5px;
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
@@ -265,12 +319,15 @@ h1,h2.contacttext{
 
 
 .left-section{
-  width: 50%;
+  width:50%;
+  vertical-align: top;
+  
 
 }
 
 .right-section{
   width: 50%;
+  vertical-align: top;
   
 }
 
@@ -279,7 +336,13 @@ hr.divider{
   margin:10px 10px 0 30px;
 }
 
+
 @media screen and (max-width:680px) {
+
+  p.skillset{
+    padding-right:30px;
+  }
+
   hr.divider{
     margin:10px 30px 0 30px;
   }
@@ -667,3 +730,5 @@ ul.links li#trailhead a:before {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
+
+
