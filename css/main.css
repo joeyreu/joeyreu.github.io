@@ -1,40 +1,44 @@
+/* Documentation
+  1.0 - Navbar
+  2.0 - Section
+  3.0 - Screen Width Responsive
+  4.0 - Canvas
+  5.0 - Animated Links
+  6.0 - Interests
+  7.0 - Portfolio Grid
+*/
+
+
 html, body {
     background-color: #1A3F5C;
     margin: 0;
     padding-top: 0px;
 }
 
-a.logo {
-    max-width: 20px;
-    width: 20px;
-}
 
-/* NAV BAR STYLING */
+/* 
+
+1.0 - Navbar
+
+*/
 ul.mainnav {
   list-style: none;
   padding: 0;
-  
-  z-index: 10; /* z index greater than the div with absolute position since
-  the navbar needs to be on top of everything else */
+  top: 0;
+  z-index: 10;
   opacity: 0.95;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
   border-radius: 5px;
-
   overflow: hidden;
   background-color: #191919;
-  top: 0;
   position: fixed;
-
-
-
   margin: 0 2.5%;
-	width: 95%;
-
-
-
-
+  width: 95%;
   box-shadow: 0px 5px 10px black;
+}
+
+a.logo {
+    max-width: 20px;
+    width: 20px;
 }
 
 ul.mainnav li {float: left;}
@@ -58,8 +62,7 @@ ul.mainnav li a{
 }
 ul.mainnav li a:hover {background-color: #82CAFA;}
 
-ul.mainnav li.right-items a{color: white; background-color: #191919;
-}
+ul.mainnav li.right-items a{color: white; background-color: #191919;}
 
 ul.mainnav li.right-items a:hover {background-color: #555;}
 
@@ -93,10 +96,14 @@ ul.mainnav li.icon a{
 ul.mainnav li.icon a:hover {background-color: #555;}
 
 ul.mainnav li.icon {display: none;}
-/* END NAV BAR STYLING */
 
 
 
+/* 
+
+2.0 - Section  
+
+*/
 .section {
   width: 100vw;
   height: calc(100vh - 20vh);
@@ -109,8 +116,13 @@ ul.mainnav li.icon {display: none;}
   height: 100vh;
 }
 
+.section-home div h1::selection { background: transparent;}
+.section-home div h2::selection { background: transparent;}
+.section-home div p::selection { background: transparent;}
+
 .about-container{
   width:100%;
+
 
   padding-bottom: 40px;
   background: #1A3F5C;
@@ -121,20 +133,14 @@ ul.mainnav li.icon {display: none;}
 }
 
 .section-about{
-  /*border: 3px solid #1A3F5C;*/
-
   margin:auto;
   z-index:1;
   max-width: 1200px;
-
   width: 90%;
   padding-bottom: 50px;
   padding-top:50px;
-
-
   border-radius: 5px;
   box-shadow: 0px 10px 20px black;
-
   background: white; /* For browsers that do not support gradients */
   /*background: -webkit-linear-gradient(#112D03, #002F2F);
   background: -o-linear-gradient(#112D03, #002F2F);
@@ -148,10 +154,10 @@ ul.mainnav li.icon {display: none;}
 
 .section-projects{
   width: 100%;
-  height: calc(100vh - 10vh);
   padding-top:90px;
+  padding-bottom: 90px;
 
-  background: #1A3F5C; /* For browsers that do not support gradients */
+  background: #1A3F5C;
 }
 
 .section-contact{
@@ -189,7 +195,6 @@ ul.mainnav li.icon {display: none;}
 }
 
 
-
 .abt_Content{
   display:inline-block;
   color:gray;
@@ -197,13 +202,7 @@ ul.mainnav li.icon {display: none;}
   min-width:140px;
 }
 
-
-
-
-
 p.skillset{
-  
-  
   padding-left:30px;
 
   margin-top:0px;
@@ -263,8 +262,6 @@ h1,h2.abouttext{
 }
 
 h3.abouttext{
-  /*text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);*/
-
   text-align: center;
   margin: 5px 30px 5px 30px;
 }
@@ -274,7 +271,6 @@ p.abouttext{
   margin-left: 30px;
   margin-right:10px;
   font-size: 14pt;
-  /*text-shadow: 0.05em 0em 0.05em rgba(0, 0, 0, 0.26);*/
   margin-top: 10px;
   margin-bottom: 5px;
 }
@@ -307,7 +303,7 @@ h1,h2.contacttext{
 
 .anchor{
   display: block;
-  height: 0px; /*same height as header*/
+  height: 0px; 
   visibility: hidden;
 }
 
@@ -336,7 +332,11 @@ hr.divider{
   margin:10px 10px 0 30px;
 }
 
+/*
 
+3.0 Screen Width 
+
+*/
 @media screen and (max-width:680px) {
 
   p.skillset{
@@ -498,9 +498,6 @@ hr.divider{
   body.show-items {
     padding-top: 0px;
   }
-
-
-
 }
 
 @keyframes show-frames{
@@ -539,46 +536,38 @@ hr.divider{
 
 
 
+/* 
+
+4.0 - Canvas  
+
+*/
 
 canvas {
   background:black;
   /*border: #000 1px solid;*/
   background: black; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(black,darkblue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(black,darkblue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(black,darkblue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(black,darkblue); /* Standard syntax */
+  background: -webkit-linear-gradient(black,darkblue); 
+  background: -o-linear-gradient(black,darkblue); 
+  background: -moz-linear-gradient(black,darkblue); 
+  background: linear-gradient(black,darkblue); 
 
 }
 
 canvas::selection { background: transparent;}
 
 
+
+/* 
+
+5.0 - Animated Links  
+
+*/
+
 a.link {
   padding: 16px;
   font-size:56pt;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 a.link {
   text-align: center;
@@ -713,11 +702,6 @@ p.links a#trailhead:before {
 	content: 'trailhead';
 }
 
-.table {
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
-}
-
 p.links{
   text-align:center;
 }
@@ -749,8 +733,14 @@ span#design a{
 
 
 
+/* 
+
+6.0 - Interests  
+
+*/
+
 .interests{
-  margin:10px 40px 10px 40px;
+  margin:16px 40px 10px 40px;
   text-align:center;
 }
 
@@ -794,6 +784,41 @@ span#design a{
 
 
 
+/* 
+
+7.0 - Portfolio Grid  
+
+*/
+
+
+
+.grid-container{
+
+  padding:20px;
+}
+
+.grid-row{
+  margin:auto;
+  text-align:center;
+  max-width: 1200px;
+  width: calc(20vw*3 + 80px)
+}
+
+.grid-item{
+  display:inline-block;
+  background:white;
+  
+  margin:10px;
+  border-radius: 10px;
+  
+  
+  width:20vw;
+  height:20vw;
+  max-width: 350px;
+  max-height:350px;
+  min-width: 220px;
+  min-height:220px;
+}
 
 
 
