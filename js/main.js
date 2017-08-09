@@ -386,16 +386,16 @@ function init() {
 
 var timer = 0;
 var timout = 350;
-
+var timer2 = 0;
+var timeout2 = 1;
 
 
 function animate(){
   requestAnimationFrame(animate);
-  if(mousedown){
-    if(origincount <= maxfw){
-      fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
-      origincount ++;
-    }
+  
+  timer2 ++;
+  if(timer2 > 1){
+    timer2 = 0;
   }
 
 
@@ -454,7 +454,17 @@ function animate(){
   timer ++;
 
 
+
+
   land.draw();
+
+  
+  if(mousedown){
+    if(origincount <= maxfw){
+      fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));
+      origincount ++;
+    }
+  }
 }
 init();
 animate();
