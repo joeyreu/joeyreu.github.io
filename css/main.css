@@ -15,10 +15,12 @@ html, body {
     padding-top: 0px;
     
 }
+body.default{
+  overflow-x:hidden;
+}
+
 body.modal-open {
-
     overflow: hidden;
-
 }
 
 

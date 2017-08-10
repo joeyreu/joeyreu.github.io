@@ -108,7 +108,8 @@ $('.modal').click(function(){
   if(modalopen){
     var modalid = "#" + $(this).attr('id');
     $(modalid).toggleClass("show-modal");
-    $("body").toggleClass("modal-open")
+    $("body").toggleClass("modal-open");
+    
     modalopen = false;
   }
 });
