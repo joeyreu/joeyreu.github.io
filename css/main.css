@@ -338,6 +338,7 @@ hr.divider{
 3.0 Screen Width 
 
 */
+
 @media screen and (max-width:680px) {
 
   p.skillset{
@@ -367,6 +368,7 @@ hr.divider{
     display:block;
   }
 
+
   ul.mainnav.initial li.right-items{
     display:none;
   }
@@ -375,7 +377,7 @@ hr.divider{
     float: right;
     display: inline-block;
   }
-  /* Hidden Items */
+
   ul.mainnav {
     position: fixed;
   }
@@ -385,6 +387,7 @@ hr.divider{
     right: 0;
     top: 0;
   }
+  
 
   ul.mainnav div{
     width:100%;
@@ -405,7 +408,7 @@ hr.divider{
     animation-fill-mode: forwards;
     animation-play-state: running;
   }
-
+ 
   ul.mainnav li.right-items > a {
     opacity: 0;
     height: 0;
@@ -432,15 +435,8 @@ hr.divider{
     text-align:center;
   }
 
-  body {
-    padding-top: 0px;
-  }
+  
 
-  body {
-    height: 0px; /*same height as header*/
-  }
-
-  /* Hidden Items End */
 
   ul.mainnav.show-items {
     position: fixed;
@@ -496,9 +492,19 @@ hr.divider{
     text-align:center;
   }
 
+/*
+  body {
+    padding-top: 0px;
+  }
+
+  body {
+    height: 0px; 
+  }
   body.show-items {
     padding-top: 0px;
   }
+
+  */
 }
 
 @keyframes show-frames{
@@ -1155,7 +1161,7 @@ a.skill2{
   
 }
 
-/*@media screen and (max-width:680px) {
+@media screen and (max-width:680px) {
   .grid-item{
     width:90vw;
     height:90vw;
@@ -1188,7 +1194,7 @@ a.skill2{
     font-size:800%;
     opacity:0.8;
   }
-}*/
+}
 
 
 

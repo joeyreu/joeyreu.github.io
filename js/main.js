@@ -124,7 +124,7 @@ $('.modal').click(function(){
 */
 var canvas = document.querySelector('canvas');
 var homediv = $("#home-div").height();
-canvas.width = window.innerWidth - 1;
+canvas.width = window.innerWidth;
 canvas.height = $("#home-div").height();
 
 var c = canvas.getContext('2d');
@@ -578,7 +578,7 @@ window.addEventListener('resize',
       }
 
     }
-    canvas.width = window.innerWidth - 1;
+    canvas.width = window.innerWidth;
     canvas.height = $("#home-div").height();
     if(canvas.width <= 680){
       maxfw = 1;
