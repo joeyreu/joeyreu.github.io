@@ -977,7 +977,7 @@ a.design{
 
 .grid-item:hover a.moreinfo{
   /* animated properties */
-  top:20%;
+  top:22%;
   font-size:900%;
   opacity:0.8;
   transform: rotateY(360deg);
@@ -1050,7 +1050,23 @@ a.design{
 
 div#bmo{
   background:rgb(22,166, 185);
+  border-color: rgb(22,166, 185);
 }
+
+div#bmo span.short-detail{
+  background:rgb(22,166, 185);
+}
+
+div#supson{
+  background:darkgreen;
+  border-color:darkgreen;
+}
+
+div#supson span.short-detail{
+  background:darkgreen;
+}
+
+
 
 
 @keyframes vidzoomin{
@@ -1134,7 +1150,7 @@ a.skill2{
 
   .grid-item:hover a.moreinfo{
     /* animated properties */
-    top:15%;
+    top:17%;
     font-size:800%;
     opacity:0.8;
   }
