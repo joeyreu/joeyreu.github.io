@@ -1155,7 +1155,7 @@ a.skill2{
   
 }
 
-@media screen and (max-width:680px) {
+/*@media screen and (max-width:680px) {
   .grid-item{
     width:90vw;
     height:90vw;
@@ -1175,7 +1175,7 @@ a.skill2{
 
 @media screen and (max-width:290px) {
   .grid-item a.moreinfo{
-    /* animated properties */
+
     top:45%;
     font-size:200%;
     opacity:0;
@@ -1183,12 +1183,12 @@ a.skill2{
   }
 
   .grid-item:hover a.moreinfo{
-    /* animated properties */
+
     top:17%;
     font-size:800%;
     opacity:0.8;
   }
-}
+}*/
 
 
 
