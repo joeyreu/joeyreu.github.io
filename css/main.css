@@ -825,7 +825,7 @@ a.design{
   overflow:hidden;
   position:relative;
 
-  border: 2px solid violet;
+  border: 3px solid violet;
 
 }
 
@@ -834,6 +834,11 @@ a.design{
   padding-top:10px;
   width:100%;
   left:0;
+
+}
+
+.grid-item span.skills-used a{
+
 }
 
 .grid-item span.skills-used a:nth-child(1){
@@ -901,6 +906,9 @@ a.design{
 
 .grid-item:hover span.skills-used a:nth-child(1){
   transform:translateY(0px);
+
+
+  
 }
 
 .grid-item:hover span.skills-used a:nth-child(2){
@@ -1010,6 +1018,8 @@ a.design{
   height:100%;
   width:100%;
 
+  border-radius:5px;
+
   animation-name: vidzoomout;
   animation-duration: 800ms;
   animation-timing-function: ease-in-out;
@@ -1064,6 +1074,16 @@ div#supson{
 
 div#supson span.short-detail{
   background:darkgreen;
+}
+
+div#agentdesktop{
+  background: rgb(0,162, 232);
+  border-color: rgb(0,162, 232);
+
+}
+
+div#agentdesktop span.short-detail{
+  background: rgb(0,162, 232);
 }
 
 
