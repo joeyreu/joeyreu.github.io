@@ -706,32 +706,31 @@ p.links{
   text-align:center;
 }
 
-span#languages a{
-  background-color:#337ab7;
-  border-color:#2e6da4;
-  color:white;
-}
 
-span#web a{
+
+a.web{
   background-color:#5cb85c;
   border-color:#4cae4c;
   color:white;
 }
 
-span#salesforce a{
+a.languages{
+  background-color:#337ab7;
+  border-color:#2e6da4;
+  color:white;
+}
+
+a.salesforce{
   background-color:#f0ad4e;
   border-color:#eea236;
   color:white;
 }
 
-
-span#design a{
+a.design{
   background-color:#5bc0de;
   border-color:#46b8da;
   color:white;
 }
-
-
 
 /* 
 
@@ -830,6 +829,100 @@ span#design a{
 
 }
 
+.grid-item span.skills-used{
+  position:absolute;
+  padding-top:10px;
+  width:100%;
+  left:0;
+}
+
+.grid-item span.skills-used a:nth-child(1){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .2s;
+  -o-transition: all .6s ease-in-out .2s;
+  -webkit-transition: all .6s ease-in-out .2s;
+  transition: all .6s ease-in-out .2s;
+}
+
+.grid-item span.skills-used a:nth-child(2){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .3s;
+  -o-transition: all .6s ease-in-out .3s;
+  -webkit-transition: all .6s ease-in-out .3s;
+  transition: all .6s ease-in-out .3s;
+}
+
+.grid-item span.skills-used a:nth-child(3){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .4s;
+  -o-transition: all .6s ease-in-out .4s;
+  -webkit-transition: all .6s ease-in-out .4s;
+  transition: all .6s ease-in-out .4s;
+}
+
+.grid-item span.skills-used a:nth-child(4){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .5s;
+  -o-transition: all .6s ease-in-out .5s;
+  -webkit-transition: all .6s ease-in-out .5s;
+  transition: all .6s ease-in-out .5s;
+}
+
+.grid-item span.skills-used a:nth-child(5){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .6s;
+  -o-transition: all .6s ease-in-out .6s;
+  -webkit-transition: all .6s ease-in-out .6s;
+  transition: all .6s ease-in-out .6s;
+}
+
+.grid-item span.skills-used a:nth-child(6){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .7s;
+  -o-transition: all .6s ease-in-out .7s;
+  -webkit-transition: all .6s ease-in-out .7s;
+  transition: all .6s ease-in-out .7s;
+}
+
+.grid-item span.skills-used a:nth-child(7){
+  transform:translateY(-100px);
+
+  -moz-transition: all .6s ease-in-out .8s;
+  -o-transition: all .6s ease-in-out .8s;
+  -webkit-transition: all .6s ease-in-out .8s;
+  transition: all .6s ease-in-out .8s;
+}
+
+.grid-item:hover span.skills-used a:nth-child(1){
+  transform:translateY(0px);
+}
+
+.grid-item:hover span.skills-used a:nth-child(2){
+  transform:translateY(0px);
+}
+
+.grid-item:hover span.skills-used a:nth-child(3){
+  transform:translateY(0px);
+}
+
+.grid-item:hover span.skills-used a:nth-child(4){
+  transform:translateY(0px);
+}
+.grid-item:hover span.skills-used a:nth-child(5){
+  transform:translateY(0px);
+}
+.grid-item:hover span.skills-used a:nth-child(6){
+  transform:translateY(0px);
+}
+.grid-item:hover span.skills-used a:nth-child(7){
+  transform:translateY(0px);
+}
 
 .grid-item span.short-detail{
 
@@ -837,7 +930,7 @@ span#design a{
   display:block;
   position:absolute;
   bottom:0;
-  text-align:left;
+  text-align:center;
   padding:10px;
 
   background:violet;
@@ -858,6 +951,9 @@ span#design a{
 }
 
 
+
+
+
 .grid-item a.moreinfo{
   width:100%;
   display:block;
@@ -872,14 +968,10 @@ span#design a{
   font-size:200%;
   opacity:0;
 
-  animation-name: linkout;
-  animation-duration: 600ms;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
+  -moz-transition: all .6s ease-in-out .2s;
+  -o-transition: all .6s ease-in-out .2s;
+  -webkit-transition: all .6s ease-in-out .2s;
+  transition: all .6s ease-in-out .2s;
 }
 
 
@@ -887,25 +979,33 @@ span#design a{
   /* animated properties */
   top:20%;
   font-size:900%;
-  opacity:0.9;
-
-
-  animation-name: linkin;
-  animation-duration: 800ms;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
+  opacity:0.8;
+  transform: rotateY(360deg);
 }
 
 
 
+.grid-item .filter{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:black;
+
+  opacity:0;
+
+  -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+.grid-item:hover .filter{
+  opacity:0.5;
+}
 
 
+.media-container{
 
-.vid-container{
   position:absolute;
   height:100%;
   width:100%;
@@ -921,7 +1021,7 @@ span#design a{
   
 }
 
-.grid-item:hover .vid-container{
+.grid-item:hover .media-container{
   position:absolute;
   left:-20%;
   top:-20%;
@@ -939,8 +1039,17 @@ span#design a{
   animation-play-state: running;
 }
 
-.vid-container video{
+.media-container video{
   width:100%;height:100%;
+}
+
+
+.media-container img{
+  width:100%;
+}
+
+div#bmo{
+  background:rgb(22,166, 185);
 }
 
 
@@ -1021,102 +1130,22 @@ a.skill2{
     font-size:200%;
     opacity:0;
 
-    animation-name: linkoutsm;
-    animation-duration: 600ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
   }
 
   .grid-item:hover a.moreinfo{
     /* animated properties */
     top:15%;
     font-size:800%;
-    opacity:0.9;
-
-    animation-name: linkinsm;
-    animation-duration: 800ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
+    opacity:0.8;
   }
 }
 
-@keyframes linkin{
-  0%{
-    top:45%;
-    font-size:200%;
-    opacity:0;
-  }
-  70%{
-    top:15%;
-    font-size:1100%;
-  }
 
-  100%{
-
-  }
-
-}
-@keyframes linkout{
-  0%{
-    opacity:1;
-    top:20%;
-    font-size:900%;
-  }
-
-  100%{
-    top:45%;
-    font-size:200%;
-    opacity:0;
-
-  }
-
-}
-
-@keyframes linkinsm{
-  0%{
-    top:45%;
-    font-size:200%;
-    opacity:0;
-  }
-  70%{
-    top:10%;
-    font-size:1000%;
-  }
-
-  100%{
-
-  }
-
-}
-
-@keyframes linkoutsm{
-  0%{
-    opacity:1;
-    top:15%;
-    font-size:800%;
-  }
-
-  100%{
-    top:45%;
-    font-size:200%;
-    opacity:0;
-
-  }
-
-}
 
 
 
 .left-det{
- 
+
 
 }
 
