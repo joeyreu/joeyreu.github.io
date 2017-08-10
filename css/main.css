@@ -13,7 +13,12 @@ html, body {
     background-color: #1A3F5C;
     margin: 0;
     padding-top: 0px;
-    overflow-x:hidden;
+    
+}
+body.modal-open {
+
+    overflow: hidden;
+
 }
 
 
@@ -983,6 +988,7 @@ a.design{
 
 
 .grid-item a.moreinfo{
+  cursor:pointer;
   width:100%;
   display:block;
   position:absolute;
@@ -1040,7 +1046,7 @@ a.design{
 
   border-radius:5px;
 
-  animation-name: vidzoomout;
+  animation-name: zoomout;
   animation-duration: 800ms;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -1053,13 +1059,10 @@ a.design{
 
 .grid-item:hover .media-container{
   position:absolute;
-  left:-20%;
-  top:-20%;
-  height:140%;
-  width:140%;
 
 
-  animation-name: vidzoomin;
+
+  animation-name: zoomin;
   animation-duration: 800ms;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -1109,48 +1112,29 @@ div#agentdesktop span.short-detail{
 
 
 
-@keyframes vidzoomin{
+@keyframes zoomin{
   0%{
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
+    transform:scale(1);
   }
   70%{
-    height:150%;
-    width:150%;
-    left:-25%;
-    top:-25%;
+    transform:scale(1.5);
   }
   100%{
-    height:140%;
-    width:140%;
-    left:-20%;
-    top:-20%;
+    transform:scale(1.4);
   }
 }
 
 
-@keyframes vidzoomout{
+@keyframes zoomout{
   0%{
-    height:140%;
-    width:140%;
-    left:-20%;
-    top:-20%;
+    transform:scale(1.4);
   }
   70%{
-    height:90%;
-    width:90%;
-    top:5%;
-    left:5%;
+    transform:scale(0.9);
   }
 
   100%{
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-
+    transform:scale(1);
   }
 
 }
@@ -1210,7 +1194,7 @@ a.skill2{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 4; /* Sit on top */
-    padding-top: 15vh; /* Location of the box */
+    padding-top: 62px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -1237,7 +1221,7 @@ a.skill2{
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    height:60%;
+    height:75vh;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
@@ -1270,9 +1254,7 @@ a.skill2{
 }
 
 
-body.modal-open {
-    overflow: hidden;
-}
+
 
 @keyframes fadein {
   0%{
@@ -1287,7 +1269,7 @@ body.modal-open {
   0%{
     transform:scale(0);
   }70%{
-    transform:scale(1.1);
+    transform:scale(1.05);
   }
   100%{
     transform:scale(1);
