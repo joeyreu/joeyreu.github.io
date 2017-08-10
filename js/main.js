@@ -1,3 +1,10 @@
+
+/*
+
+1.0 - Navbar Code
+
+*/
+
 // Toggle between adding and removing the "show-items" class to topnav when the
 // user clicks on the icon
 function screenAdjust() {
@@ -34,6 +41,87 @@ function scrollToAnchor(anchorID){
 
 
 
+
+/*
+
+2.0 - Modal Code
+
+*/
+
+
+/*var linkArray = document.getElementsByClassName("moreinfo");
+var spanArray = document.getElementsByClassName("close");
+var modalArray = document.getElementsByClassName('modal');
+
+
+for(var i = 0; i < linkArray.length; i ++){
+  linkArray[i].onclick = function(){
+    console.log(linkArray[i].id);
+    modalArray[i].style.display = "block";
+  }
+
+  if(i < spanArray.length){
+    spanArray[i].onclick = function(){
+      modalArray[i].style.display = "none";
+    }
+  }
+  
+
+  
+}*/
+
+
+var modalopen = false;
+
+$('a.moreinfo').click(function(){
+  if(!modalopen){
+    modalopen = true;
+    var curid = $(this).attr('id');
+    //console.log(curid);
+
+    var modalid = "#" + curid.substring(0, curid.indexOf("-")) + "-modal";    
+    //console.log(modalid);
+
+    $(modalid).toggleClass("show-modal");
+    $("body").toggleClass("modal-open")
+  }
+  
+});
+
+
+$('span.close').click(function(){
+  if(modalopen){
+    var modalid = "#" + $(this).parent().parent().attr('id');
+    $(modalid).toggleClass("show-modal");
+    $("body").toggleClass("modal-open")
+    modalopen = false;
+  }
+  
+});
+
+
+$('.modal-content').click(function(event){
+  event.stopPropagation();
+});
+
+$('.modal').click(function(){
+  if(modalopen){
+    var modalid = "#" + $(this).attr('id');
+    $(modalid).toggleClass("show-modal");
+    $("body").toggleClass("modal-open")
+    modalopen = false;
+  }
+});
+
+
+
+
+
+/*
+
+3.0 - Canvas Code
+
+*/
 var canvas = document.querySelector('canvas');
 var homediv = $("#home-div").height();
 canvas.width = window.innerWidth;
@@ -458,7 +546,7 @@ function animate(){
 
   land.draw();
 
-  
+
   if(mousedown){
     if(origincount <= maxfw){
       fireWorks.push(new Firework(canvas.width/2,canvas.height*9/10, mouse.x, mouse.y, true, false, false));

@@ -838,6 +838,7 @@ a.design{
 }
 
 .grid-item span.skills-used a{
+  box-shadow: 0px 2px 10px black;
 
 }
 
@@ -871,13 +872,22 @@ a.design{
 .grid-item span.skills-used a:nth-child(4){
   transform:translateY(-100px);
 
+  -moz-transition: all .6s ease-in-out .45s;
+  -o-transition: all .6s ease-in-out .45s;
+  -webkit-transition: all .6s ease-in-out .45s;
+  transition: all .6s ease-in-out .45s;
+}
+
+.grid-item span.skills-used a:nth-child(5){
+  transform:translateY(-100px);
+
   -moz-transition: all .6s ease-in-out .5s;
   -o-transition: all .6s ease-in-out .5s;
   -webkit-transition: all .6s ease-in-out .5s;
   transition: all .6s ease-in-out .5s;
 }
 
-.grid-item span.skills-used a:nth-child(5){
+.grid-item span.skills-used a:nth-child(6){
   transform:translateY(-100px);
 
   -moz-transition: all .6s ease-in-out .6s;
@@ -886,7 +896,7 @@ a.design{
   transition: all .6s ease-in-out .6s;
 }
 
-.grid-item span.skills-used a:nth-child(6){
+.grid-item span.skills-used a:nth-child(7){
   transform:translateY(-100px);
 
   -moz-transition: all .6s ease-in-out .7s;
@@ -929,6 +939,9 @@ a.design{
   transform:translateY(0px);
 }
 .grid-item:hover span.skills-used a:nth-child(7){
+  transform:translateY(0px);
+}
+.grid-item:hover span.skills-used a:nth-child(8){
   transform:translateY(0px);
 }
 
@@ -1179,12 +1192,97 @@ a.skill2{
 
 
 
+/* 
 
-.left-det{
+8.0 - Modals
 
+*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 15vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    animation-name: fadein;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
 
 }
 
-.right-det{
-   padding:10px;
+.show-modal{
+  display:block;
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    height:60%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius:10px;
+    transform:scale(0);
+
+    animation-name: flyin;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 200ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@keyframes fadein {
+  0%{
+    background-color: rgba(0,0,0,0.0);
+  }
+  100%{
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+
+@keyframes flyin {
+  0%{
+    transform:scale(0);
+  }70%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
 }
