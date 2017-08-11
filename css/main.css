@@ -20,6 +20,7 @@ body.default{
 }
 
 .modal-open {
+  overflow-y:hidden;
 
  /* overflow-y:hidden; causes scrollbar to disapear on windows chrome and makes
  width of site slightly larger*/
@@ -1296,7 +1297,8 @@ a.skill2{
     border: 1px solid #888;
     width: 81%;
     border-radius:10px;
-    transform:scale(0);   
+    transform:scale(0); 
+    overflow:scroll;  
 }
 
 

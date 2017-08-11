@@ -87,13 +87,10 @@ $('a.moreinfo').click(function(){
   if(!modalopen){
     modalopen = true;
 
-    $("body").bind('scroll touchmove mousewheel', stopScroll);
+    //$("body").bind('scroll touchmove mousewheel', stopScroll);
 
     var curid = $(this).attr('id');
-    //console.log(curid);
-
     var modalid = "#" + curid.substring(0, curid.indexOf("-")) + "-modal";    
-    //console.log(modalid);
 
     $(modalid).addClass("show-modal");
     $("body").addClass("modal-open");
@@ -110,14 +107,14 @@ $('span.close').click(function(){
 
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
-
     // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
     }, 500);
 
-    $("body").unbind('scroll touchmove mousewheel', stopScroll);
+
+    //$("body").unbind('scroll touchmove mousewheel', stopScroll);
     modalopen = false;
   }
   
@@ -131,17 +128,16 @@ $('.modal-content').click(function(event){
 $('.modal').click(function(){
   if(modalopen){
     var modalid = "#" + $(this).attr('id');
-
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
-
     // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
     }, 400);
 
-    $("body").unbind('scroll touchmove mousewheel', stopScroll);
+
+    //$("body").unbind('scroll touchmove mousewheel', stopScroll);
     modalopen = false;
   }
 });
