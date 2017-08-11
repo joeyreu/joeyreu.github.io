@@ -21,7 +21,7 @@ body.default{
 
 .modal-open {
 
-
+  overflow-y:hidden;
 
   
 }
