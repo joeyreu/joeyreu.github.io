@@ -21,7 +21,8 @@ body.default{
 
 .modal-open {
 
-  overflow-y:hidden;
+ /* overflow-y:hidden; causes scrollbar to disapear on windows chrome and makes
+ width of site slightly larger*/
 
   
 }
@@ -754,15 +755,16 @@ a.resume-link {
   border: solid 1px #555;
   border-radius:3px;
   display:inline-block;
-  padding:10px;
+  padding:10px 15px 10px 15px;
+
 
   color:#333;
   text-decoration:none;
 
-   -moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
+   -moz-transition: all .6s ease-in-out;
+  -o-transition: all .6s ease-in-out;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
 
 }
 
