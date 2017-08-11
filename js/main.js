@@ -98,6 +98,7 @@ $('span.close').click(function(){
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
 
+    // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
@@ -123,10 +124,11 @@ $('.modal').click(function(){
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
 
+    // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
-    }, 700);
+    }, 400);
 
 
     modalopen = false;
