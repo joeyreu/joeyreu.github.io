@@ -85,8 +85,7 @@ $('a.moreinfo').click(function(){
     $(modalid).addClass("show-modal");
 
     //$("body").css('top', -(document.documentElement.scrollTop) + 'px');
-    console.log(document.documentElement.scrollTop);
-    $("html").addClass("modal-open");
+    $("body").addClass("modal-open");
 
   }
   

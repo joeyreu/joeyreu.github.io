@@ -20,7 +20,9 @@ body.default{
 }
 
 .modal-open {
-  overflow-y:hidden;
+
+
+
   
 }
 
@@ -747,6 +749,29 @@ a.design{
   color:white;
 }
 
+a.resume-link {
+
+  border: solid 1px black;
+  border-radius:3px;
+  display:inline-block;
+  padding:10px;
+
+  color:black;
+  text-decoration:none;
+
+   -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+
+}
+
+a.resume-link:hover{
+  box-shadow: 1px 5px 15px gray;
+}
+
+
+
 /* 
 
 6.0 - Interests  
@@ -1201,7 +1226,7 @@ a.skill2{
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 120vh; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -1215,6 +1240,9 @@ a.skill2{
     animation-fill-mode: forwards;
     animation-play-state: running;
 
+
+    overflow:scroll;
+
 }
 
 .show-modal{
@@ -1224,10 +1252,10 @@ a.skill2{
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    height:75vh;
+    height:calc(100vh - 62px - 62px);
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 81%;
     border-radius:10px;
     transform:scale(0);
 
@@ -1279,3 +1307,5 @@ a.skill2{
     transform:scale(1);
   }
 }
+
+
