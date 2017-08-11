@@ -71,11 +71,24 @@ for(var i = 0; i < linkArray.length; i ++){
 }*/
 
 
+
+
 var modalopen = false;
+
+
+
+
+function stopScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+}
 
 $('a.moreinfo').click(function(){
   if(!modalopen){
     modalopen = true;
+
+    $("body").bind('scroll touchmove mousewheel', stopScroll);
+
     var curid = $(this).attr('id');
     //console.log(curid);
 
@@ -104,9 +117,7 @@ $('span.close').click(function(){
       $(modalid).removeClass("hide-modal");
     }, 500);
 
-    
-    
-
+    $("body").unbind('scroll touchmove mousewheel', stopScroll);
     modalopen = false;
   }
   
@@ -130,10 +141,16 @@ $('.modal').click(function(){
       $(modalid).removeClass("hide-modal");
     }, 400);
 
-
+    $("body").unbind('scroll touchmove mousewheel', stopScroll);
     modalopen = false;
   }
 });
+
+
+
+
+
+
 
 
 
