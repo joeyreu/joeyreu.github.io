@@ -1232,7 +1232,7 @@ a.skill2{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
     animation-name: fadein;
-    animation-duration: 800ms;
+    animation-duration: 400ms;
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: 1;
@@ -1247,6 +1247,44 @@ a.skill2{
 .show-modal{
   display:block;
 }
+
+.hide-modal{
+  display:block;
+  animation-name: fadeout;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.show-modal div.modal-content{
+  animation-name: flyin;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 200ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.hide-modal div.modal-content{
+  transform:scale(1);
+  animation-name: flyout;
+  animation-duration: 700ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+
+
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
@@ -1256,18 +1294,9 @@ a.skill2{
     border: 1px solid #888;
     width: 81%;
     border-radius:10px;
-    transform:scale(0);
-
-
-    animation-name: flyin;
-    animation-duration: 500ms;
-    animation-timing-function: ease-in-out;
-    animation-delay: 200ms;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
+    transform:scale(0);   
 }
+
 
 /* The Close Button */
 .close {
@@ -1296,6 +1325,15 @@ a.skill2{
   }
 }
 
+@keyframes fadeout {
+  0%{
+    background-color: rgba(0,0,0,0.4);
+  }
+  100%{
+    background-color: rgba(0,0,0,0.0);
+  }
+}
+
 @keyframes flyin {
   0%{
     transform:scale(0);
@@ -1304,6 +1342,29 @@ a.skill2{
   }
   100%{
     transform:scale(1);
+  }
+}
+
+@keyframes flyout {
+  0%{
+    transform: scaleX(1) scaleY(1) translateY(0);
+    opacity:1;
+
+
+  }30%{
+    transform: scaleX(0.005) scaleY(0.5);
+    border-radius:50%;
+  }
+
+  90%{
+    opacity:0.5;
+    transform: scaleX(0.005) translateY(calc(-100vh));
+  }
+  100%{
+    border-radius:50%;
+    background-color:black;
+    opacity:0;
+    transform: scaleX(0.005) translateY(calc(-100vh));
   }
 }
 

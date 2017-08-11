@@ -83,8 +83,6 @@ $('a.moreinfo').click(function(){
     //console.log(modalid);
 
     $(modalid).addClass("show-modal");
-
-    //$("body").css('top', -(document.documentElement.scrollTop) + 'px');
     $("body").addClass("modal-open");
 
   }
@@ -95,9 +93,18 @@ $('a.moreinfo').click(function(){
 $('span.close').click(function(){
   if(modalopen){
     var modalid = "#" + $(this).parent().parent().attr('id');
-    $(modalid).removeClass("show-modal");
-    $("body").removeClass("modal-open");
 
+
+    $(modalid).addClass("hide-modal");
+    $(modalid).removeClass("show-modal");
+
+    setTimeout(function(){
+      $("body").removeClass("modal-open");
+      $(modalid).removeClass("hide-modal");
+    }, 500);
+
+    
+    
 
     modalopen = false;
   }
@@ -112,8 +119,14 @@ $('.modal-content').click(function(event){
 $('.modal').click(function(){
   if(modalopen){
     var modalid = "#" + $(this).attr('id');
+
+    $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
-    $("body").removeClass("modal-open");
+
+    setTimeout(function(){
+      $("body").removeClass("modal-open");
+      $(modalid).removeClass("hide-modal");
+    }, 700);
 
 
     modalopen = false;
