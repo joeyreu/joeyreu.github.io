@@ -19,8 +19,9 @@ body.default{
   overflow-x:hidden;
 }
 
-body.modal-open {
-    overflow: hidden;
+.modal-open {
+  overflow-y:hidden;
+  
 }
 
 
@@ -1229,6 +1230,7 @@ a.skill2{
     width: 80%;
     border-radius:10px;
     transform:scale(0);
+
 
     animation-name: flyin;
     animation-duration: 500ms;
