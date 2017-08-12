@@ -1294,7 +1294,7 @@ a.skill2{
     margin: auto;
     height:calc(100vh - 62px - 62px);
     padding: 20px;
-    border: 5px solid black;
+    border: 1px solid black;
     width: 70%;
     border-radius:10px;
     transform:scale(0); 
@@ -1462,15 +1462,15 @@ a.pebblestore:hover{
 
 
 a.pebblestore img{
-  width:80px;
+  width:100px;
   display:inline-block;
 }
 
 a.github-source{
-  font-size:35px;
+  font-size:45px;
   display:inline-block;
   text-decoration: none;
-  padding:0px 5px 0px 5px;
+  padding:0px 7px 0px 7px;
   border:solid 1px black;
   border-radius:50%;
   color:#6e5494;
