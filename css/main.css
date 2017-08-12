@@ -1294,12 +1294,13 @@ a.skill2{
     margin: auto;
     height:calc(100vh - 62px - 62px);
     padding: 20px;
-    border: 1px solid #888;
+    border: 5px solid black;
     width: 70%;
     border-radius:10px;
     transform:scale(0); 
-    overflow-y:scroll; 
+    overflow-y:auto; 
     overflow-x:hidden; 
+    max-width:750px;
 }
 
 
@@ -1441,22 +1442,50 @@ a.skill2{
 a.pebblestore{
   display:inline-block;
   text-decoration: none;
-  padding:8px 12px 4px 12px;
+  padding:8px 10px 4px 12px;
   border:solid 1px black;
-  border-radius:10px;
+  background:white;
+  border-radius:3px;
   margin-bottom:20px;
+  margin-right:20px;
+  -moz-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+
+}
+
+a.pebblestore:hover{
+  box-shadow: 0px 5px 10px black;
+
+}
+
+
+a.pebblestore img{
+  width:80px;
+  display:inline-block;
+}
+
+a.github-source{
+  font-size:35px;
+  display:inline-block;
+  text-decoration: none;
+  padding:0px 5px 0px 5px;
+  border:solid 1px black;
+  border-radius:50%;
+  color:#6e5494;
+
+
+
   -moz-transition: all .4s ease-in;
   -o-transition: all .4s ease-in;
   -webkit-transition: all .4s ease-in;
   transition: all .4s ease-in;
 }
 
-a.pebblestore:hover{
+a.github-source:hover{
   box-shadow: 0px 5px 10px black;
-}
-a.pebblestore img{
-  width:100px;
-  display:inline-block;
+
 }
 
 .modal-skills{
