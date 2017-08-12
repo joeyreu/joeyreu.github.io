@@ -415,7 +415,7 @@ function Moon(face){
 
 
     c.globalAlpha = this.imgopacity;
-    c.drawImage(this.img, this.x-50,this.y-50);
+    c.drawImage(this.img, this.x-50,this.y-47);
     c.globalAlpha = 1;
   }
 
@@ -436,6 +436,10 @@ function Moon(face){
         this.imgopacity += 0.001;
       }
 
+    }
+
+    if(this.y+this.radius < innerHeight*1/3 - 2){
+      this.y += this.dy;
     }
 
     this.draw();
