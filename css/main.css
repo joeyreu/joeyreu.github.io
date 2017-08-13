@@ -752,7 +752,7 @@ a.design{
 }
 
 a.resume-link {
-
+  display: inline-block;
   border: solid 1px #555;
   border-radius:3px;
   display:inline-block;
@@ -844,7 +844,7 @@ a.resume-link:hover{
   margin:auto;
   text-align:center;
   max-width: 1200px;
-  width: calc(20vw*3 + 120px);
+  width: calc(20vw*3 + 140px);
 }
 
 .grid-item{
@@ -1422,8 +1422,8 @@ a.skill2{
 
 #bmo-modal .modal-content{
   color:white;
-  background:rgb(22,166, 185);
-  border-color:rgb(22,166, 185);
+  background:#1a96ab;
+  border-color:#1a96ab;
 }
 
 #supson-modal .modal-content{
