@@ -1263,6 +1263,14 @@ a.skill2{
   animation-play-state: running;
 }
 
+.modal-transition-hide{
+  animation:none;
+}
+
+.modal-transition-show{
+  display:block;
+}
+
 .show-modal div.modal-content{
   animation-name: flyin;
   animation-duration: 400ms;
@@ -1285,6 +1293,8 @@ a.skill2{
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
+
+
 
 
 
@@ -1422,8 +1432,8 @@ a.skill2{
 
 #bmo-modal .modal-content{
   color:white;
-  background:#1a96ab;
-  border-color:#1a96ab;
+  background:rgb(22,166, 185);
+  border-color:rgb(22,166, 185);
 }
 
 #supson-modal .modal-content{
@@ -1496,4 +1506,110 @@ a.github-source:hover{
   bottom:0;
   left:0;
   padding-bottom:20px;
+}
+
+
+.modal-left{
+  display:none;
+
+  z-index:20;
+  border-radius:50%;
+  border:solid 2px white;
+  padding:7px 13px 7px 8px;
+  opacity:0.8;
+
+  line-height:20px;
+
+  color:white;
+  font-size:30px;
+  position:fixed;
+  
+  left:10px;
+  bottom:40vh;
+
+  cursor: pointer;
+
+  animation-name: fadeinopac;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+
+}
+
+.modal-open .modal-left{
+  display:block;
+}
+
+.modal-right{
+  display:none;
+
+  z-index:20;
+  border-radius:50%;
+  border:solid 2px white;
+  padding:7px 8px 7px 13px;
+  opacity:0.8;
+
+  line-height:20px;
+
+  color:white;
+  font-size:30px;
+  position:fixed;
+  
+  right:10px;
+  bottom:40vh;
+
+  cursor: pointer;
+
+  animation-name: fadeinopac;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.modal-open .modal-right{
+  display:block;
+}
+
+.modal-controls-fadeout{
+  animation-name: fadeoutopac;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes fadeinopac {
+  0%{
+    opacity:0;
+    transform:scale(0);
+  }
+  70%{
+    transform:scale(1.1);
+  }
+  100%{
+    opacity:0.8;
+    transform:scale(1);
+  }
+}
+
+@keyframes fadeoutopac {
+  0%{
+    opacity:0.8;
+    transform:scale(1);
+  }
+  100%{
+    opacity:0;
+    transform:scale(0);
+  }
 }

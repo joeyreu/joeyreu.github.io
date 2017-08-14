@@ -107,11 +107,16 @@ $('span.close').click(function(){
 
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
+
+    $(".modal-left").addClass("modal-controls-fadeout");
+    $(".modal-right").addClass("modal-controls-fadeout");
     // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
-    }, 500);
+      $(".modal-left").removeClass("modal-controls-fadeout");
+      $(".modal-right").removeClass("modal-controls-fadeout");
+    }, 400);
 
 
     //$("body").unbind('scroll touchmove mousewheel', stopScroll);
@@ -130,10 +135,15 @@ $('.modal').click(function(){
     var modalid = "#" + $(this).attr('id');
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
+
+    $(".modal-left").addClass("modal-controls-fadeout");
+    $(".modal-right").addClass("modal-controls-fadeout");
     // wait for flyout animation
     setTimeout(function(){
       $("body").removeClass("modal-open");
       $(modalid).removeClass("hide-modal");
+      $(".modal-left").removeClass("modal-controls-fadeout");
+      $(".modal-right").removeClass("modal-controls-fadeout");
     }, 400);
 
 
@@ -144,7 +154,98 @@ $('.modal').click(function(){
 
 
 
+$('.modal-left').click(function(){
 
+  var modalArray = document.getElementsByClassName('modal');
+  var toHide = null;
+  var toShow = null;
+
+
+  $('.show-modal').addClass("")
+
+
+
+  for(var i = 0; i < modalArray.length; i ++){
+    //console.log(modalArray[i].id);
+    if($('#' + modalArray[i].id).hasClass('show-modal')){
+      toHide = '#' + modalArray[i].id;
+
+      if(i == 0){
+        toShow = '#' + modalArray[modalArray.length-1].id;
+      }else{
+        toShow = '#' + modalArray[i-1].id;
+      }
+      console.log(toHide);
+      console.log(toShow);
+      break;
+      
+    }
+  }
+
+  if(toHide != null){
+    $(toHide).addClass("modal-transition-hide");
+    $(toHide).addClass("hide-modal");
+    $(toHide).removeClass("show-modal");
+
+    $(toShow).addClass("show-modal");
+
+    // wait for flyout animation
+    setTimeout(function(){
+      // $("body").removeClass("modal-open");
+      $(toHide).removeClass("hide-modal");
+      $(toHide).removeClass("modal-transition-hide");
+
+    }, 400);
+
+  }
+});
+
+
+$('.modal-right').click(function(){
+
+  var modalArray = document.getElementsByClassName('modal');
+  var toHide = null;
+  var toShow = null;
+
+
+  $('.show-modal').addClass("")
+
+
+
+  for(var i = 0; i < modalArray.length; i ++){
+    //console.log(modalArray[i].id);
+    if($('#' + modalArray[i].id).hasClass('show-modal')){
+      toHide = '#' + modalArray[i].id;
+
+      if(i == modalArray.length-1){
+        toShow = '#' + modalArray[0].id;
+      }else{
+        toShow = '#' + modalArray[i+1].id;
+      }
+      console.log(toHide);
+      console.log(toShow);
+      break;
+      
+    }
+  }
+
+  if(toHide != null){
+    $(toHide).addClass("modal-transition-hide");
+    $(toHide).addClass("hide-modal");
+    $(toHide).removeClass("show-modal");
+
+    $(toShow).addClass("show-modal");
+
+    // wait for flyout animation
+    setTimeout(function(){
+      // $("body").removeClass("modal-open");
+      $(toHide).removeClass("hide-modal");
+      $(toHide).removeClass("modal-transition-hide");
+
+    }, 400);
+
+  }
+});
 
 
 
@@ -542,7 +643,7 @@ function animate(){
        && fireWorks[i].x - fireWorks[i].tx < 10
        && fireWorks[i].x - fireWorks[i].tx > -10
        && fireWorks[i].y - fireWorks[i].ty < 10
-       && fireWorks[i].y - fireWorks[i].ty > -10){
+       && fireWorks[i].y - fireWorks[i].ty > -20){
 
       var startx = fireWorks[i].x;
       var starty = fireWorks[i].y;
