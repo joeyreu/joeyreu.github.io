@@ -1,7 +1,8 @@
 function myMap() {
   var myCenter = new google.maps.LatLng(43.4641621,-80.5212214);
+  var adjustCenter = new google.maps.LatLng(43.4691621,-80.5212214);
   var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 12, scrollwheel: false};
+  var mapOptions = {center: adjustCenter, zoom: 12, scrollwheel: false};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var image = 'res/canada.png';
   var marker = new google.maps.Marker({position:myCenter,icon: image});
@@ -14,12 +15,12 @@ function myMap() {
 
   google.maps.event.addListener(marker,'click',function() {
   map.setZoom(12);
-  map.setCenter(marker.getPosition());
+  map.setCenter(adjustCenter);
   });
 
   $('#maplocation').click(function(){
     map.setZoom(12);
-    map.setCenter(marker.getPosition());
+    map.setCenter(adjustCenter);
   });
 }
 
