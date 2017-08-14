@@ -1,50 +1,6 @@
-
 /*
 
-1.0 - Navbar Code
-
-*/
-
-// Toggle between adding and removing the "show-items" class to topnav when the
-// user clicks on the icon
-function screenAdjust() {
-  var x = document.getElementById("mynav");
-  var y = document.getElementById("mybody");
-  $("#mynav").toggleClass('show-items');
-  $("#mybody").toggleClass('show-items');
-
-  if($('#mynav').hasClass('initial')){
-    $("#mynav").toggleClass('initial');
-  }
-}
-
-// Description: Hides dropdown menu after clicking dropdown menu item
-//    Input: Null
-//    Output: Null
-function clickDropdownItem(){
-	var x = document.getElementById("mynav");
-  var y = document.getElementById("mybody");
-  if($('#mynav').hasClass('show-items')){
-    $("#mynav").toggleClass('show-items');
-    $("#mybody").toggleClass('show-items');
-  }
-}
-
-// Description: Scrolls page to the anchor specified
-//    Input: Anchor ID or name
-//    Output: Null
-function scrollToAnchor(anchorID){
-  var aTag = $("a[name='"+ anchorID +"']");
-  $('html,body').animate({scrollTop: aTag.offset().top},700,'swing');
-}
-
-
-
-
-
-/*
-
-2.0 - Modal Code
+1.0 - Modal Code
 
 */
 
@@ -100,37 +56,7 @@ $('a.moreinfo').click(function(){
 });
 
 
-$('span.close').click(function(){
-  if(modalopen){
-    var modalid = "#" + $(this).parent().parent().attr('id');
-
-
-    $(modalid).addClass("hide-modal");
-    $(modalid).removeClass("show-modal");
-
-    $(".modal-left").addClass("modal-controls-fadeout");
-    $(".modal-right").addClass("modal-controls-fadeout");
-    // wait for flyout animation
-    setTimeout(function(){
-      $("body").removeClass("modal-open");
-      $(modalid).removeClass("hide-modal");
-      $(".modal-left").removeClass("modal-controls-fadeout");
-      $(".modal-right").removeClass("modal-controls-fadeout");
-    }, 400);
-
-
-    //$("body").unbind('scroll touchmove mousewheel', stopScroll);
-    modalopen = false;
-  }
-  
-});
-
-
-$('.modal-content').click(function(event){
-  event.stopPropagation();
-});
-
-$('.modal').click(function(){
+function hidemodal(){
   if(modalopen){
     var modalid = "#" + $(this).attr('id');
     $(modalid).addClass("hide-modal");
@@ -150,20 +76,20 @@ $('.modal').click(function(){
     //$("body").unbind('scroll touchmove mousewheel', stopScroll);
     modalopen = false;
   }
+}
+
+
+$('span.close').click(hidemodal);
+$('.modal-content').click(function(event){
+  event.stopPropagation();
 });
+$('.modal').click(hidemodal);
 
-
-
-$('.modal-left').click(function(){
+function leftchange(){
 
   var modalArray = document.getElementsByClassName('modal');
   var toHide = null;
   var toShow = null;
-
-
-  $('.show-modal').addClass("")
-
-
 
   for(var i = 0; i < modalArray.length; i ++){
     //console.log(modalArray[i].id);
@@ -175,8 +101,7 @@ $('.modal-left').click(function(){
       }else{
         toShow = '#' + modalArray[i-1].id;
       }
-      console.log(toHide);
-      console.log(toShow);
+    
       break;
       
     }
@@ -201,19 +126,13 @@ $('.modal-left').click(function(){
     }, 400);
 
   }
-});
+}
 
-
-$('.modal-right').click(function(){
+function rightchange(){
 
   var modalArray = document.getElementsByClassName('modal');
   var toHide = null;
   var toShow = null;
-
-
-  $('.show-modal').addClass("")
-
-
 
   for(var i = 0; i < modalArray.length; i ++){
     //console.log(modalArray[i].id);
@@ -225,8 +144,6 @@ $('.modal-right').click(function(){
       }else{
         toShow = '#' + modalArray[i+1].id;
       }
-      console.log(toHide);
-      console.log(toShow);
       break;
       
     }
@@ -248,11 +165,90 @@ $('.modal-right').click(function(){
     }, 400);
 
   }
-});
+}
+
+$('.modal-left').click(leftchange);
+$('.modal-right').click(rightchange);
+
+
+function hidemodal2(){
+
+}
+
+$('.mainnav a').click(hidemodal2);
+
+
+/*
+
+2.0 - Navbar Code
+
+*/
+
+// Toggle between adding and removing the "show-items" class to topnav when the
+// user clicks on the icon
+function screenAdjust() {
+  var x = document.getElementById("mynav");
+  var y = document.getElementById("mybody");
+  $("#mynav").toggleClass('show-items');
+  $("#mybody").toggleClass('show-items');
+
+  if($('#mynav').hasClass('initial')){
+    $("#mynav").toggleClass('initial');
+  }
+}
+
+// Description: Hides dropdown menu after clicking dropdown menu item
+//    Input: Null
+//    Output: Null
+function clickDropdownItem(){
+  var x = document.getElementById("mynav");
+  var y = document.getElementById("mybody");
+  if($('#mynav').hasClass('show-items')){
+    $("#mynav").toggleClass('show-items');
+    $("#mybody").toggleClass('show-items');
+  }
+}
+
+// Description: Scrolls page to the anchor specified
+//    Input: Anchor ID or name
+//    Output: Null
+function scrollToAnchor(anchorID){
+  var aTag = $("a[name='"+ anchorID +"']");
+  $('html,body').animate({scrollTop: aTag.offset().top},700,'swing');
 
 
 
 
+
+  var modalArray = document.getElementsByClassName('modal');
+  var modalid = null;
+
+  for(var i = 0; i < modalArray.length; i ++){
+    if($('#' + modalArray[i].id).hasClass('show-modal')){
+      modalid = '#' + modalArray[i].id;
+      break;
+    }
+  }
+
+  if(modalopen){
+    $(modalid).addClass("hide-modal");
+    $(modalid).removeClass("show-modal");
+
+    $(".modal-left").addClass("modal-controls-fadeout");
+    $(".modal-right").addClass("modal-controls-fadeout");
+    // wait for flyout animation
+    setTimeout(function(){
+      $("body").removeClass("modal-open");
+      $(modalid).removeClass("hide-modal");
+      $(".modal-left").removeClass("modal-controls-fadeout");
+      $(".modal-right").removeClass("modal-controls-fadeout");
+    }, 400);
+
+
+    //$("body").unbind('scroll touchmove mousewheel', stopScroll);
+    modalopen = false;
+  }
+}
 
 
 

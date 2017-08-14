@@ -38,7 +38,7 @@ ul.mainnav {
   list-style: none;
   padding: 0;
   top: 0;
-  z-index: 10;
+  z-index: 5;
   opacity: 0.95;
   border-radius: 5px;
   overflow: hidden;
@@ -1224,7 +1224,7 @@ a.skill2{
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 15; /* Sit on top */
+    z-index: 4; /* Sit on top */
     padding-top: 62px; /* Location of the box */
     left: 0;
     top: 0;
@@ -1254,6 +1254,8 @@ a.skill2{
 
 
 .hide-modal{
+  z-index:4;
+
   display:block;
   animation-name: fadeout;
   animation-duration: 400ms;
@@ -1288,6 +1290,7 @@ a.skill2{
 
 
 .hide-modal div.modal-content{
+
   transform:scale(1);
   animation-name: flyout;
   animation-duration: 400ms;
@@ -1516,9 +1519,10 @@ a.github-source:hover{
 
 
 .modal-left{
+  box-shadow: 0px 5px 10px black;
   display:none;
 
-  z-index:20;
+  z-index:7;
   border-radius:50%;
   border:solid 2px white;
   padding:7px 13px 7px 8px;
@@ -1551,9 +1555,10 @@ a.github-source:hover{
 }
 
 .modal-right{
+  box-shadow: 0px 5px 10px black;
   display:none;
 
-  z-index:20;
+  z-index:7;
   border-radius:50%;
   border:solid 2px white;
   padding:7px 8px 7px 13px;
