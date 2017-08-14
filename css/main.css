@@ -1273,6 +1273,8 @@ a.skill2{
   display:block;
 }
 
+
+
 .show-modal div.modal-content{
   animation-name: flyin;
   animation-duration: 400ms;
@@ -1283,6 +1285,7 @@ a.skill2{
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
+
 
 .hide-modal div.modal-content{
   transform:scale(1);
@@ -1364,6 +1367,7 @@ a.skill2{
   }
 }
 
+
 @keyframes flyout {
   0%{
     transform: scale(1) translateY(0);
@@ -1374,7 +1378,7 @@ a.skill2{
     transform: scale(0.5);
   }
   100%{
-    transform:  scale(0.5) translateY(calc(-200vh));
+    transform:  scale(0.5) translateY(calc(-155vh));
   }
 }
 
@@ -1527,7 +1531,7 @@ a.github-source:hover{
   position:fixed;
   
   left:10px;
-  bottom:40vh;
+  bottom:45vh;
 
   cursor: pointer;
 
@@ -1562,7 +1566,7 @@ a.github-source:hover{
   position:fixed;
   
   right:10px;
-  bottom:40vh;
+  bottom:45vh;
 
   cursor: pointer;
 
@@ -1580,6 +1584,8 @@ a.github-source:hover{
   display:block;
 }
 
+
+
 .modal-controls-fadeout{
   animation-name: fadeoutopac;
   animation-duration: 400ms;
@@ -1590,6 +1596,19 @@ a.github-source:hover{
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
+
+
+a.modal-control{
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+
+}
+a.modal-control:hover{
+  transform: scale(1.1); 
+}
+
 
 @keyframes fadeinopac {
   0%{

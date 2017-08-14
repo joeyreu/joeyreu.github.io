@@ -188,13 +188,15 @@ $('.modal-left').click(function(){
     $(toHide).removeClass("show-modal");
 
     $(toShow).addClass("show-modal");
-    $(toShow).addClass("transition");
+    $(toShow).addClass("modal-transition-show");
 
     // wait for flyout animation
     setTimeout(function(){
       // $("body").removeClass("modal-open");
       $(toHide).removeClass("hide-modal");
       $(toHide).removeClass("modal-transition-hide");
+      
+      $(toShow).removeClass("modal-transition-show");
 
     }, 400);
 
