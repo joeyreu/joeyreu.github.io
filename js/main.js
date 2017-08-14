@@ -78,8 +78,31 @@ function hidemodal(){
   }
 }
 
+function hidemodalclose(){
+  if(modalopen){
+    var modalid = "#" + $(this).parent().parent().attr('id');
+    $(modalid).addClass("hide-modal");
+    $(modalid).removeClass("show-modal");
 
-$('span.close').click(hidemodal);
+    $(".modal-left").addClass("modal-controls-fadeout");
+    $(".modal-right").addClass("modal-controls-fadeout");
+    // wait for flyout animation
+    setTimeout(function(){
+      $("body").removeClass("modal-open");
+      $(modalid).removeClass("hide-modal");
+      $(".modal-left").removeClass("modal-controls-fadeout");
+      $(".modal-right").removeClass("modal-controls-fadeout");
+    }, 400);
+
+
+    //$("body").unbind('scroll touchmove mousewheel', stopScroll);
+    modalopen = false;
+  }
+}
+
+
+$('span.close').click(hidemodalclose);
+
 $('.modal-content').click(function(event){
   event.stopPropagation();
 });
@@ -91,6 +114,11 @@ function leftchange(){
   var toHide = null;
   var toShow = null;
 
+
+  $('.show-modal').addClass("")
+
+
+
   for(var i = 0; i < modalArray.length; i ++){
     //console.log(modalArray[i].id);
     if($('#' + modalArray[i].id).hasClass('show-modal')){
@@ -101,7 +129,8 @@ function leftchange(){
       }else{
         toShow = '#' + modalArray[i-1].id;
       }
-    
+      console.log(toHide);
+      console.log(toShow);
       break;
       
     }
@@ -133,6 +162,7 @@ function rightchange(){
   var modalArray = document.getElementsByClassName('modal');
   var toHide = null;
   var toShow = null;
+
 
   for(var i = 0; i < modalArray.length; i ++){
     //console.log(modalArray[i].id);
@@ -169,14 +199,6 @@ function rightchange(){
 
 $('.modal-left').click(leftchange);
 $('.modal-right').click(rightchange);
-
-
-function hidemodal2(){
-
-}
-
-$('.mainnav a').click(hidemodal2);
-
 
 /*
 
@@ -292,15 +314,15 @@ var hue = 120;
 
 // create firework
 function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
-	// actual coordinates
-	this.x = sx;
-	this.y = sy;
-	// starting coordinates
-	this.sx = sx;
-	this.sy = sy;
-	// target coordinates
-	this.tx = tx;
-	this.ty = ty;
+  // actual coordinates
+  this.x = sx;
+  this.y = sy;
+  // starting coordinates
+  this.sx = sx;
+  this.sy = sy;
+  // target coordinates
+  this.tx = tx;
+  this.ty = ty;
 
   this.history = [];
   this.historyLength = 2;
@@ -315,10 +337,10 @@ function Firework(sx, sy, tx, ty, origin, hidden, starthue) {
   this.origin = origin;
   this.angle = Math.random()*(Math.PI * 2);
   this.friction = 0.95;
-	this.gravity = 2;
+  this.gravity = 2;
   this.alpha = 1;
-	// set how fast the particle fades out
-	this.decay = Math.random()*(0.04-0.025) + 0.025;
+  // set how fast the particle fades out
+  this.decay = Math.random()*(0.04-0.025) + 0.025;
   this.hidden = hidden;
 
   this.starthue = starthue;
