@@ -605,7 +605,7 @@ function Moon(face){
 
 
 
-var maxfw = 10;
+var maxfw = 6;
 var mousedown = false;
 
 //var moon2 = undefined;
