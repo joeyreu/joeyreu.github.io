@@ -133,6 +133,8 @@ ul.mainnav li.icon {display: none;}
 .section-home div h2::selection { background: transparent;}
 .section-home div p::selection { background: transparent;}
 
+.section-home div p span::selection { background: transparent;}
+
 .about-container{
   width:100%;
 
@@ -174,11 +176,12 @@ ul.mainnav li.icon {display: none;}
 }
 
 .section-contact{
+  text-align:center;
   background-color: #0E2333;
   display:block;
   overflow:auto;
-  padding-bottom: 10vh;
-  padding-top: 90px;
+  padding-bottom: 52px;
+  padding-top: 52px;
 }
 
 .hometext {
@@ -561,7 +564,7 @@ hr.divider{
 
 */
 
-canvas {
+canvas#mycanvas {
   background:black;
   /*border: #000 1px solid;*/
   background: black; /* For browsers that do not support gradients */
@@ -571,8 +574,6 @@ canvas {
   background: linear-gradient(black,darkblue); 
 
 }
-
-canvas::selection { background: transparent;}
 
 
 
@@ -844,7 +845,9 @@ a.resume-link:hover{
   margin:auto;
   text-align:center;
   max-width: 1200px;
-  width: calc(20vw*3 + 140px);
+  /*width: calc(20vw*3 + 140px);*/
+
+
 }
 
 .grid-item{
@@ -855,8 +858,8 @@ a.resume-link:hover{
   border-radius: 5px;
   
   
-  width:20vw;
-  height:20vw;
+  width:25vw;
+  height:25vw;
   max-width: 350px;
   max-height:350px;
   min-width: 290px;
@@ -1176,23 +1179,25 @@ a.skill2{
   
 }
 
+@media screen and (max-width:977px) {
+  .grid-item{
+    width:40vw;
+    height:40vw;
+    min-width: 200px;
+    min-height:200px;
+  }
+}
+
 @media screen and (max-width:680px) {
   .grid-item{
     width:90vw;
     height:90vw;
-    min-width: 50px;
-    min-height:50px;
+    min-width: 200px;
+    min-height:200px;
   }
 }
 
-@media screen and (max-width:866px) {
-  .grid-item{
-    width:90vw;
-    height:90vw;
-    min-width: 50px;
-    min-height:50px;
-  }
-}
+
 
 @media screen and (max-width:290px) {
   .grid-item a.moreinfo{
@@ -1632,4 +1637,9 @@ a.modal-control{
     opacity:0;
     transform:scale(0);
   }
+}
+
+#maplocation{
+  cursor:pointer;
+
 }

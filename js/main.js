@@ -1,3 +1,31 @@
+function myMap() {
+  var myCenter = new google.maps.LatLng(43.4641621,-80.5212214);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12, scrollwheel: false};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var image = 'res/canada.png';
+  var marker = new google.maps.Marker({position:myCenter,icon: image});
+  marker.setMap(map);
+
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: "Waterloo, ON Canada"
+  // });
+  // infowindow.open(map,marker);
+
+  google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(12);
+  map.setCenter(marker.getPosition());
+  });
+
+  $('#maplocation').click(function(){
+    map.setZoom(12);
+    map.setCenter(marker.getPosition());
+  });
+}
+
+
+
+
 /*
 
 1.0 - Modal Code
@@ -109,92 +137,96 @@ $('.modal-content').click(function(event){
 $('.modal').click(hidemodal);
 
 function leftchange(){
-
-  var modalArray = document.getElementsByClassName('modal');
-  var toHide = null;
-  var toShow = null;
-
-
-  $('.show-modal').addClass("")
+  if(modalopen){
+    var modalArray = document.getElementsByClassName('modal');
+    var toHide = null;
+    var toShow = null;
 
 
+    $('.show-modal').addClass("")
 
-  for(var i = 0; i < modalArray.length; i ++){
-    //console.log(modalArray[i].id);
-    if($('#' + modalArray[i].id).hasClass('show-modal')){
-      toHide = '#' + modalArray[i].id;
 
-      if(i == 0){
-        toShow = '#' + modalArray[modalArray.length-1].id;
-      }else{
-        toShow = '#' + modalArray[i-1].id;
+
+    for(var i = 0; i < modalArray.length; i ++){
+      //console.log(modalArray[i].id);
+      if($('#' + modalArray[i].id).hasClass('show-modal')){
+        toHide = '#' + modalArray[i].id;
+
+        if(i == 0){
+          toShow = '#' + modalArray[modalArray.length-1].id;
+        }else{
+          toShow = '#' + modalArray[i-1].id;
+        }
+        console.log(toHide);
+        console.log(toShow);
+        break;
+        
       }
-      console.log(toHide);
-      console.log(toShow);
-      break;
-      
+    }
+
+    if(toHide != null){
+      $(toHide).addClass("modal-transition-hide");
+      $(toHide).addClass("hide-modal");
+      $(toHide).removeClass("show-modal");
+
+      $(toShow).addClass("show-modal");
+      $(toShow).addClass("modal-transition-show");
+
+      // wait for flyout animation
+      setTimeout(function(){
+        // $("body").removeClass("modal-open");
+        $(toHide).removeClass("hide-modal");
+        $(toHide).removeClass("modal-transition-hide");
+        
+        $(toShow).removeClass("modal-transition-show");
+
+      }, 400);
+
     }
   }
-
-  if(toHide != null){
-    $(toHide).addClass("modal-transition-hide");
-    $(toHide).addClass("hide-modal");
-    $(toHide).removeClass("show-modal");
-
-    $(toShow).addClass("show-modal");
-    $(toShow).addClass("modal-transition-show");
-
-    // wait for flyout animation
-    setTimeout(function(){
-      // $("body").removeClass("modal-open");
-      $(toHide).removeClass("hide-modal");
-      $(toHide).removeClass("modal-transition-hide");
-      
-      $(toShow).removeClass("modal-transition-show");
-
-    }, 400);
-
-  }
+  
 }
 
 function rightchange(){
+  if(modalopen){
+    var modalArray = document.getElementsByClassName('modal');
+    var toHide = null;
+    var toShow = null;
 
-  var modalArray = document.getElementsByClassName('modal');
-  var toHide = null;
-  var toShow = null;
 
+    for(var i = 0; i < modalArray.length; i ++){
+      //console.log(modalArray[i].id);
+      if($('#' + modalArray[i].id).hasClass('show-modal')){
+        toHide = '#' + modalArray[i].id;
 
-  for(var i = 0; i < modalArray.length; i ++){
-    //console.log(modalArray[i].id);
-    if($('#' + modalArray[i].id).hasClass('show-modal')){
-      toHide = '#' + modalArray[i].id;
-
-      if(i == modalArray.length-1){
-        toShow = '#' + modalArray[0].id;
-      }else{
-        toShow = '#' + modalArray[i+1].id;
+        if(i == modalArray.length-1){
+          toShow = '#' + modalArray[0].id;
+        }else{
+          toShow = '#' + modalArray[i+1].id;
+        }
+        break;
+        
       }
-      break;
-      
+    }
+
+    if(toHide != null){
+      $(toHide).addClass("modal-transition-hide");
+      $(toHide).addClass("hide-modal");
+      $(toHide).removeClass("show-modal");
+
+      $(toShow).addClass("show-modal");
+
+      // wait for flyout animation
+      setTimeout(function(){
+        // $("body").removeClass("modal-open");
+        $(toHide).removeClass("hide-modal");
+        $(toHide).removeClass("modal-transition-hide");
+
+      }, 400);
+
     }
   }
-
-  if(toHide != null){
-    $(toHide).addClass("modal-transition-hide");
-    $(toHide).addClass("hide-modal");
-    $(toHide).removeClass("show-modal");
-
-    $(toShow).addClass("show-modal");
-
-    // wait for flyout animation
-    setTimeout(function(){
-      // $("body").removeClass("modal-open");
-      $(toHide).removeClass("hide-modal");
-      $(toHide).removeClass("modal-transition-hide");
-
-    }, 400);
-
-  }
+  
 }
 
 $('.modal-left').click(leftchange);

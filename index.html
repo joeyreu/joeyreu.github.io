@@ -11,7 +11,6 @@
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 	
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -53,11 +52,13 @@
 			<p class="hometext">Computer Science&nbsp;
 				<i class="fa fa-code home-title" style="font-size:24px;color:lightblue;font-weight: bold;"></i>
 				&nbsp;Software&nbsp;
-				<i class="fa fa-music" style="font-size:24px;color:lightblue"></i>
-
-				&nbsp;Music&nbsp;
-				<i class="fa fa-star-o" style="font-size:24px;color:lightblue;font-weight: bold;"></i>
-				&nbsp;Art</p>
+				
+				<span style="display:inline-block">
+					<i class="fa fa-music" style="font-size:24px;color:lightblue"></i>
+					&nbsp;Music&nbsp;
+					<i class="fa fa-star-o" style="font-size:24px;color:lightblue;font-weight: bold;"></i>
+					&nbsp;Art</p>
+				</span>
 		</div>
 
 		<canvas id="mycanvas"></canvas>
@@ -435,7 +436,7 @@
 	  		<br/>
 		  	
 	  		<a class="pebblestore" 
-				href="https://apps.getpebble.com/en_US/application/598c9662461a8d9e49000c1c?native=false&query=BMO&section=watchfaces"
+				href="https://apps.getpebble.com/en_US/developer/576ee7526c2104ce5500002f/1?native=false&query=BMO&section=watchfaces"
 				target="_blank">
 					<img src="res/pebble_logo.png" alt="bmo">
 				</a>
@@ -563,19 +564,40 @@
 
 
 
-
 	<a class="anchor1" name="contact"></a>
 	<div class="section-contact">
 
 			<h1 class="contacttext">Contact</h1>
 			<h2 class="contacttext">—</h2>
 
+			
+
+			<div id="map" style="width:100%;height:300px;"></div>
+	
+
+			<p class="contacttext" style="text-align:left;display:inline-block;" >
+				<span id="maplocation">
+					<a style="font-size:20px;"">
+						<i class="fa fa-map-marker" style="width:20px;text-align:center"></i>
+					</a>
+					&nbsp;Waterloo, ON
+				</span>
+				<br/>
+				<a style="font-size:20px">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+				&nbsp;jrreusin@uwaterloo.ca
+			</p>
 
 			<p class="contacttext">Developed by Joseph Reusing</p>
 	</div>
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+
+	<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhbHJXl-qdenW-1tL2rKDOxtmHxBZsA8A&callback=myMap">
+	</script>
 
 </body>
 </html>
