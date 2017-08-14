@@ -233,6 +233,28 @@ function rightchange(){
 $('.modal-left').click(leftchange);
 $('.modal-right').click(rightchange);
 
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        leftchange();
+    }
+    else if (e.keyCode == '40') {
+        rightchange();
+    }
+    else if (e.keyCode == '37') {
+       leftchange();
+    }
+    else if (e.keyCode == '39') {
+       rightchange();
+    }
+
+}
+
 /*
 
 2.0 - Navbar Code
@@ -274,18 +296,18 @@ function scrollToAnchor(anchorID){
 
 
 
-
-  var modalArray = document.getElementsByClassName('modal');
-  var modalid = null;
-
-  for(var i = 0; i < modalArray.length; i ++){
-    if($('#' + modalArray[i].id).hasClass('show-modal')){
-      modalid = '#' + modalArray[i].id;
-      break;
-    }
-  }
-
   if(modalopen){
+    var modalArray = document.getElementsByClassName('modal');
+    var modalid = null;
+
+    for(var i = 0; i < modalArray.length; i ++){
+      if($('#' + modalArray[i].id).hasClass('show-modal')){
+        modalid = '#' + modalArray[i].id;
+        break;
+      }
+    }
+
+  
     $(modalid).addClass("hide-modal");
     $(modalid).removeClass("show-modal");
 
