@@ -188,6 +188,7 @@ $('.modal-left').click(function(){
     $(toHide).removeClass("show-modal");
 
     $(toShow).addClass("show-modal");
+    $(toShow).addClass("transition");
 
     // wait for flyout animation
     setTimeout(function(){

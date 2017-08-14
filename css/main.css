@@ -1251,6 +1251,8 @@ a.skill2{
   display:block;
 }
 
+
+
 .hide-modal{
   display:block;
   animation-name: fadeout;
@@ -1264,7 +1266,7 @@ a.skill2{
 }
 
 .modal-transition-hide{
-  animation:none;
+  background-color:transparent;
 }
 
 .modal-transition-show{
