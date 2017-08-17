@@ -169,7 +169,7 @@ ul.mainnav li.icon {display: none;}
 
 .section-projects{
   width: 100%;
-  padding-top:90px;
+  padding-top:72px;
   padding-bottom: 90px;
 
   background: #1A3F5C;
@@ -180,8 +180,8 @@ ul.mainnav li.icon {display: none;}
   background-color: #0E2333;
   display:block;
   overflow:auto;
-  padding-bottom: 52px;
-  padding-top: 52px;
+  padding-bottom: 50px;
+  padding-top: 72px;
 }
 
 .hometext {
