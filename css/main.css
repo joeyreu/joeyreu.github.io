@@ -1118,6 +1118,15 @@ a.resume-link:hover{
   width:100%;
 }
 
+div#spacecubes{
+  background:midnightblue;
+  border-color:midnightblue;
+}
+
+div#spacecubes span.short-detail{
+  background:midnightblue;
+}
+
 div#bmo{
   background:rgb(22,166, 185);
   border-color: rgb(22,166, 185);
@@ -1436,18 +1445,29 @@ a.skill2{
 
 .modal-media div video{
   width:80%;
-  max-width:500px;
+  max-width:800px;
   border-radius:10px;
 }
 
 .modal-media div img{
   width:80%;
-  max-width:500px;
+  max-width:800px;
   border-radius:15px;
 }
 
+#spacecubes-modal .modal-media div img{
+  max-width:600px;
+}
+
+
+#spacecubes-modal .modal-content{
+  color:white;
+  background:midnightblue;
+  border-color:midnightblue;
+}
+
 #bmo-modal .modal-media div img{
-  max-width:400px;
+  max-width:600px;
 }
 
 

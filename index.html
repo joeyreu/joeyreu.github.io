@@ -267,6 +267,37 @@
 		<!-- GRID -->
 	  <div class="grid-row"  href="#projects">
 
+	  	<!-- Web Portfolio ITEM -->
+	    <div id="spacecubes" class="grid-item">
+
+	    	<div class="media-container">
+
+		    	<video autoplay loop muted>
+					  <source src="res/spacecubes_demo.mov" type="video/mp4">
+					  Your browser does not support html video tags.
+					</video>
+
+				</div>
+
+	  		<div class="filter">
+	   		</div>
+
+	      <a id="spacecubes-link" class="moreinfo">
+					<i class="fa fa-search-plus"></i>
+	    	</a>
+
+	    	<span class="skills-used">
+    			<a class="skill languages" style="">C++</a>
+    			<a class="skill languages" style="">OpenGL</a>
+	    	</span>
+
+	    	<span class="short-detail">
+    			<b>Space Cubes</b>
+    			<br/>
+	    		Intro to Graphics Project (CS488)
+	   		</span>
+	    </div>
+
 	  	<!-- BMO ITEM -->
 	  	<div id="bmo" class="grid-item">
 
@@ -300,23 +331,22 @@
 	    	<div class="media-container">
 
 		    	<video autoplay loop muted>
-				  <source src="res/supson_demo.mp4" type="video/mp4">
-				  Your browser does not support html video tags.
-				</video>
+					  <source src="res/supson_demo.mp4" type="video/mp4">
+					  Your browser does not support html video tags.
+					</video>
 
-			</div>
+				</div>
 
-			<div class="filter">
-	   		</div>
+				<div class="filter"></div>
 
-			<a id="supson-link" class="moreinfo">
-				<i class="fa fa-search-plus"></i>
-	    	</a>
+				<a id="supson-link" class="moreinfo">
+					<i class="fa fa-search-plus"></i>
+		    </a>
 
-			<span class="skills-used">
-    			<a class="skill languages" style="">Java</a>
-    			<a class="skill design" style="">Slick2D</a>
-	    	</span>
+				<span class="skills-used">
+	    			<a class="skill languages" style="">Java</a>
+	    			<a class="skill design" style="">Slick2D</a>
+		    </span>
 
 	    	<span class="short-detail">
 	    		<b>Sup Son. The Game</b>
@@ -325,7 +355,6 @@
 
 	    		A Legend of Zelda Clone	    		
 	   		</span>
-	   		
 	    </div>
 	    
 	  	<!-- AGENT DESKTOP ITEM -->
@@ -412,10 +441,52 @@
 	</div>
 
 
+  <div id="spacecubes-modal" class="modal">
+
+	   <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <div class="modal-title">Space Cubes</div>
+
+	    <div class="modal-media">
+	    		<div>
+				    <video autoplay loop muted>
+						  <source src="res/spacecubes_demo.mov" type="video/mp4">
+						  Your browser does not support html video tags.
+						</video>
+					</div>
+			</div>
+
+			<div class="modal-desc">
+				
+				<span class="skills-used">
+    			<a class="skill salesforce" style="">C++</a>
+    			<a class="skill salesforce" style="">OpenGL</a>
+		  	</span>
+		  	
+		  	<p>
+		  		3D Game created for my final project in Introduction to Graphics (CS 488).
+		  	</p>
+		  	
+		  	<div style="text-align:center">
+	  			Click the link below to see the source code on GitHub.
+	  		</div>
+
+	  		<br/>
+
+				<a class="github-source"
+				href="https://github.com/joeyreu/spacecubes"
+				target="_blank">	
+					<i class="fa fa-github"></i>
+				</a>
+		 	</div>
+		</div>
+
+	</div>
+
+
 	<!-- BMO Watchface Modal -->
 	<div id="bmo-modal" class="modal">
-
-
 	  <!-- Modal content -->
 	  <div class="modal-content">
 	    <span class="close">&times;</span>
@@ -457,14 +528,7 @@
 					<i class="fa fa-github"></i>
 				</a>
 		  </div>
-		 
-
-			
-			
 	  </div>
-
-
-
 	</div>
 
 	<div id="supson-modal" class="modal">
@@ -526,6 +590,7 @@
 			</div>
 
 			<div class="modal-desc">
+				
 				<span class="skills-used">
     			<a class="skill salesforce" style="">Apex</a>
     			<a class="skill salesforce" style="">Visualforce</a>
@@ -537,21 +602,16 @@
 	    			<a class="skill web" style="">Javascript</a>
 	    		</span>
 		  	</span>
+		  	
 		  	<p>
 		  		Worked on a project to update an existing Console in Salesforce to provide more visibility and functionality.
 		  		Made SOQL queries in an <b>Apex</b> controller for the visualforce page to analyze and grab important data to be displayed in the top banner.
 		  		Implemented a pop-up on hover tooltip in the <b>Visualforce</b> page to display more data while saving space on the banner.
 		  		<br/>
 		  		Helped make various other changes to <b>Visualforce</b> pages and <b>Apex</b> classes.
-
-
-		  
 		  	</p>
-		  	
-		  </div>
-
-
-	  </div>
+		 	</div>
+		</div>
 
 	</div>
 
@@ -625,7 +685,7 @@
 
 			<p class="contacttext" style="text-align:left;display:inline-block;" >
 				<span id="maplocation">
-					<a style="font-size:20px;"">
+					<a style="font-size:20px;">
 						<i class="fa fa-map-marker" style="width:20px;text-align:center"></i>
 					</a>
 					&nbsp;Waterloo, ON
