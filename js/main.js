@@ -1,3 +1,4 @@
+
 function myMap() {
   var myCenter = new google.maps.LatLng(43.4641621,-80.5212214);
   var adjustCenter = new google.maps.LatLng(43.4691621,-80.5212214);
@@ -500,8 +501,11 @@ function Star(x, y, dx, dy, radius){
   this.radius = radius;
   this.minRadius = radius;
   this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+  this.alpha = 0;
 
   this.draw = function() {
+    var origAlpha = c.globalAlpha;
+    c.globalAlpha = this.alpha;
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
     c.strokeStyle=this.color;
@@ -512,6 +516,7 @@ function Star(x, y, dx, dy, radius){
     c.shadowOffsetY = 0;
     c.stroke();
     c.fill();
+    c.globalAlpha = origAlpha;
   }
 
   this.update = function(){
@@ -526,6 +531,10 @@ function Star(x, y, dx, dy, radius){
     }else{
       this.y = -this.radius*2;
     }
+
+    if (this.alpha < 1) {
+        this.alpha += 0.005;
+    }
     this.draw();
   }
 
@@ -539,19 +548,43 @@ function Land(){
   this.radiusX = this.x*1.2;
   this.radiusY = this.y*0.23;
   this.color = '#0B1C02';
+//   this.dy = 1;
+  this.alpha = 0;
+  this.shadowBlur = 0;
+  
 
   this.draw = function(){
+    var origAlpha = c.globalAlpha;
+    c.globalAlpha = this.alpha;
     c.beginPath();
     //ellipse x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise
     c.ellipse(this.x, this.y, this.radiusX, this.radiusY,0, Math.PI, true);
     c.strokeStyle=this.color;
     c.fillStyle=this.color;
     c.shadowColor = '#E3EAEF';
-    c.shadowBlur = 20;
+    c.shadowBlur = this.shadowBlur;
     c.shadowOffsetX = 0;
     c.shadowOffsetY = 0;
     c.stroke();
     c.fill();
+    c.globalAlpha = origAlpha;
+  }
+
+  this.update = function() {
+    // if (this.y > canvas.height) {
+    //     this.dy *= 1.03;
+    //     this.y -= this.dy;
+    // }
+    // if (this.y < canvas.height)
+    //     this.y = canvas.height;
+    if (this.alpha < 1) {
+        this.alpha += 0.05;
+    } else {
+        this.alpha = 1;
+        if (this.shadowBlur < 20)
+            this.shadowBlur += 1;
+    }
+    this.draw();
   }
 
 }
@@ -560,7 +593,7 @@ function Land(){
 // Moon
 function Moon(face){
   this.x = canvas.width/2;
-  this.y = canvas.height;
+  this.y = 1.3*canvas.height;
   this.radius = 50;
   this.color = '#FEFCD7';
   this.dy = 1.5;
@@ -570,12 +603,15 @@ function Moon(face){
   this.img.src = 'res/lolface2.png'; //(window.location.origin + window.location.pathname)
   this.imgopacity = 0;
   this.donemove = false;
+  this.alpha = 0;
 
   if(this.face){
     this.x = canvas.width/4;
   }
 
   this.draw = function(){
+    var origAlpha = c.globalAlpha;
+    c.globalAlpha = this.alpha;
     c.beginPath();
     //ellipse x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise
     c.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
@@ -589,35 +625,43 @@ function Moon(face){
     c.shadowOffsetY = 0;
     c.stroke();
     c.fill();
+    c.globalAlpha = origAlpha;
 
 
+    
+    var origAlpha = c.globalAlpha;
     c.globalAlpha = this.imgopacity;
     c.drawImage(this.img, this.x-50,this.y-47);
-    c.globalAlpha = 1;
+    c.globalAlpha = origAlpha;
   }
 
   this.update = function(){
-    if(this.y+this.radius > innerHeight*1/3){
-      this.y -= this.dy;
-
-      if(this.y+this.radius < innerHeight*1/2){
-        if(this.dy > 0.05){
-          this.dy = this.dy*0.995;
-        }
-      }
-      // this.x += 0.025;
-
-
-    }else{
-      if(this.imgopacity < 0.45){
-        this.imgopacity += 0.001;
-      }
-
+    if (this.alpha < 1) {
+        this.alpha += 0.05;
+    } else {
+        if(this.y+this.radius > innerHeight*1/3){
+            this.y -= this.dy;
+      
+            if(this.y+this.radius < innerHeight*1/2){
+              if(this.dy > 0.05){
+                this.dy = this.dy*0.995;
+              }
+            }
+            // this.x += 0.025;
+      
+      
+          }else{
+            if(this.imgopacity < 0.45){
+              this.imgopacity += 0.001;
+            }
+      
+          }
+      
+          if(this.y+this.radius < innerHeight*1/3 - 2){
+            this.y += this.dy;
+          }
     }
-
-    if(this.y+this.radius < innerHeight*1/3 - 2){
-      this.y += this.dy;
-    }
+    
 
     this.draw();
   }
@@ -693,7 +737,7 @@ var timout = 350;
 var timer2 = 0;
 var timeout2 = 1;
 
-
+// c.globalAlpha = 0;
 function animate(){
   requestAnimationFrame(animate);
   
@@ -701,7 +745,9 @@ function animate(){
   if(timer2 > 1){
     timer2 = 0;
   }
-
+//   if (c.globalAlpha < 1) {
+//       c.globalAlpha += 0.05;
+//   }
 
   hue += 0.5;
   c.clearRect(0,0,innerWidth, innerHeight);
@@ -759,8 +805,8 @@ function animate(){
 
 
 
-
-  land.draw();
+  land.update();
+//   land.draw();
 
 
   if(mousedown){
